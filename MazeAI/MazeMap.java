@@ -2,12 +2,10 @@ import java.util.List;
 import java.util.ArrayList;
 
 class MazeMap{
-	public List<Node> curr_map;//Todo: node
-	public int width;
+	public static List<Node> curr_map = new ArrayList<Node>();//Todo: node
+	public static int width;
 	
-	MazeMap(){
-		curr_map = new ArrayList<Node>();
-	}
+	
 
 	// public void initializeMap(int x, int y, String line){
 	//     for(int i = 0; i < line.length(); i++){
@@ -15,7 +13,7 @@ class MazeMap{
 	//     }
 	// }
 
-	public void printMap(){
+	public static void printMap(List<Node> curr_map){
 		for (int i = 0; i < curr_map.size(); i++) {
 			System.out.print(curr_map.get(i).value);
 			if((i+1) % width == 0){

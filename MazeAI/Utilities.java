@@ -16,21 +16,20 @@ class Utilities{
 	    reader = new BufferedReader(new FileReader(file));
 
 	    String line;
-
-	    MazeMap mazemap = new MazeMap();
 	   	
 	    int line_times = 0;
 	    int column = 0;
 	 	while ((line = reader.readLine()) != null) {
 	        // System.out.println(line);
-	        mazemap.width = line.length();
+	        MazeMap.width = line.length();
 	        for (int i = 0; i < line.length(); i++ ) {
 	        	//initialize the board;
-	        	mazemap.curr_map.add(new Node(i, column, line.charAt(i)));
+	        	MazeMap.curr_map.add(new Node(i, column, line.charAt(i)));
+	        	
 	        }
 	        column ++;
 	    }
-	    mazemap.printMap();
+	    MazeMap.printMap(MazeMap.curr_map);
 
 	} catch (IOException e) {
 	    e.printStackTrace();
