@@ -16,24 +16,27 @@ public class Node{
 	//distance from goal state
 	public int curr_distance;
 
+	public Node(int x, int y){
+		this.x = x;
+		this.y = y;
+
+		up_child = null;
+		down_child = null;
+		left_child = null;
+		right_child = null;
+
+		isVisited = false;
+		up_wall = false;
+		down_wall = false;
+		left_wall = false;
+		right_wall = false;
+	}
+
   public int manhattanDistance(Node dest) {
       int dist = Math.abs(this.x - dest.x) + Math.abs(this.y - dest.y);
       return dist;
   }
 
-  public Node(int x, int y){
-    this.x = x;
-    this.y = y;
+	
 
-    up_child = null;
-    down_child = null;
-    left_child = null;
-    right_child = null;
-
-    isVisited = false;
-    up_wall = false;
-    down_wall = false;
-    left_wall = false;
-    right_wall = false;
-  }
 }
