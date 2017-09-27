@@ -2,7 +2,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-
+import java.util.List;
+import java.util.ArrayList;
 
 class Utilities{
   public static void fileReader(){
@@ -11,25 +12,47 @@ class Utilities{
   	final String OPEN_MAZE = "OpenMaze.txt";
 
   	BufferedReader reader = null;
+  	BufferedReader next_reader = null;
 	try {
-	    File file = new File(BIG_MAZE);
+	    File file = new File(MEDIUM_MAZE);
 	    reader = new BufferedReader(new FileReader(file));
 
-	    String line;
-	   	
+	    String line;	   	
 	    int line_times = 0;
 	    int column = 0;
+	    List<Node> maze_map = MazeMap.curr_map;
+
+	    //detector for next line equals null
+
 	 	while ((line = reader.readLine()) != null) {
 	        // System.out.println(line);
 	        MazeMap.width = line.length();
-	        for (int i = 0; i < line.length(); i++ ) {
+	        for (int row = 0; row < line.length(); row++ ) {
 	        	//initialize the board;
-	        	MazeMap.curr_map.add(new Node(i, column, line.charAt(i)));
-	        	
+	        	maze_map.add(new Node(row, column, line.charAt(row)));//add every single node of char to the MazeMap
+
+	        	// if(column == 0){MazeMap.getNode(row, column).left_child = null;}
+	        	// else{
+	        		
+	        	// 	MazeMap.getNode(row, column).left_child =
+	        	// 	MazeMap.getNode(row-1, column);
+	        	// 	MazeMap.getNode(row-1, column).right_child = MazeMap.getNode(row, column);
+	        	// }
+	        	// //y cases
+	        	// if(row == 0){MazeMap.getNode(row, column).up_child = null;}
+	        	// else{
+	        	// 	MazeMap.getNode(row, column).up_child = MazeMap.getNode(row, column -1);
+	        	// 	MazeMap.getNode(row, column - 1).down_child = MazeMap.getNode(row, column);
+	        	// }
+	        	int position = (column * MazeMap.width + row);
+	        	System.out.println("row: "+ row + "column: " + column + "position: " + position);
+
 	        }
 	        column ++;
 	    }
 	    MazeMap.printMap(MazeMap.curr_map);
+	    System.out.println("width" + MazeMap.width);
+	    System.out.println("column" + column);
 
 	} catch (IOException e) {
 	    e.printStackTrace();

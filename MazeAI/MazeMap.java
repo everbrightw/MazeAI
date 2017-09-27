@@ -22,4 +22,7 @@ class MazeMap{
 		}
 		System.out.println("finish");
 	}
+	public static Node getNode(int x, int y){
+		return curr_map.get(y * width + x);
+	}
 }
