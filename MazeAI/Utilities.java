@@ -3,24 +3,29 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 
+
 class Utilities{
   public static void fileReader(){
   	BufferedReader reader = null;
 
 	try {
-	    File file = new File("MediumMaze.txt");
+	    File file = new File("BigMaze.txt");
 	    reader = new BufferedReader(new FileReader(file));
 
 	    String line;
 
-	    MazeMap mazemap = new MazeMap(10,10);
+	    MazeMap mazemap = new MazeMap();
 	   	
 	    int line_times = 0;
 	 	while ((line = reader.readLine()) != null) {
-	       	
-	        mazemap.initializeMap(line, line_times);
-	        line_times++;
+	        // System.out.println(line);
+	        mazemap.width = line.length();
+	        for (int i = 0; i < line.length(); i++ ) {
+	        	mazemap.curr_map.add(line.charAt(i));
+	        	
+	        }
 	    }
+	    mazemap.printMap();
 
 	} catch (IOException e) {
 	    e.printStackTrace();
@@ -38,4 +43,6 @@ class Utilities{
         System.out.print(curr_maze.charAt(i));
     }
   }
+
+
 }

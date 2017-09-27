@@ -1,24 +1,27 @@
+import java.util.List;
+import java.util.ArrayList;
 
 class MazeMap{
-	public char[][] curr_map;
+	public List<Character> curr_map;
+	public int width;
 	
-	MazeMap(int x, int y){
-		curr_map = new char[x][y];
+	MazeMap(){
+		curr_map = new ArrayList<Character>();
 	}
-	public void initializeMap(String line, int line_times){
-	    for(int i = 0; i < 10; i++){
-	     	curr_map[line_times][i] = line.charAt(i);
+
+	public void initializeMap(String line){
+	    for(int i = 0; i < line.length(); i++){
+	     	this.curr_map.add(line.charAt(i));
 	    }
 	}
 
 	public void printMap(){
-		for (int c = 0; c < 10 ;c++ ) {
-			for (int r = 0; r < 10 ;r++ ) {
-				System.out.print(curr_map[c][r]);
+		for (int i = 0; i < curr_map.size(); i++) {
+			System.out.print(curr_map.get(i));
+			if((i+1) % width == 0){
+				System.out.println();
 			}
-			System.out.println();
 		}
+		System.out.println("finish");
 	}
-
-
 }
