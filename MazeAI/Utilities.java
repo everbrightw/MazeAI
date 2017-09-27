@@ -9,6 +9,7 @@ class Utilities{
   	final String BIG_MAZE = "BigMAze.txt";
   	final String MEDIUM_MAZE = "MediumMaze.txt";
   	final String OPEN_MAZE = "OpenMaze.txt";
+
   	BufferedReader reader = null;
 	try {
 	    File file = new File(BIG_MAZE);
@@ -19,13 +20,15 @@ class Utilities{
 	    MazeMap mazemap = new MazeMap();
 	   	
 	    int line_times = 0;
+	    int column = 0;
 	 	while ((line = reader.readLine()) != null) {
 	        // System.out.println(line);
 	        mazemap.width = line.length();
 	        for (int i = 0; i < line.length(); i++ ) {
-	        	mazemap.curr_map.add(line.charAt(i));
-	        	
+	        	//initialize the board;
+	        	mazemap.curr_map.add(new Node(i, column, line.charAt(i)));
 	        }
+	        column ++;
 	    }
 	    mazemap.printMap();
 

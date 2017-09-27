@@ -1,4 +1,7 @@
-public class Node{
+
+
+class Node{
+
 	public int x;
 	public int y;
 	public Node up_child;
@@ -6,12 +9,12 @@ public class Node{
 	public Node left_child;
 	public Node right_child;
 
-	//wall blocking
+	//has visited;
 	public Boolean isVisited;
-	public Boolean up_wall;
-	public Boolean down_wall;
-	public Boolean left_wall;
-	public Boolean right_wall;
+  //three way blocked
+	public Boolean isBlocked;
+
+  public char value;//store for curr node's value;
 
 	//distance from goal state
 	public int curr_distance;
@@ -21,9 +24,11 @@ public class Node{
       return dist;
   }
 
-  public Node(int x, int y){
+  public Node(int x, int y, char value){
     this.x = x;
     this.y = y;
+
+    this.value = value;
 
     up_child = null;
     down_child = null;
@@ -31,9 +36,9 @@ public class Node{
     right_child = null;
 
     isVisited = false;
-    up_wall = false;
-    down_wall = false;
-    left_wall = false;
-    right_wall = false;
+
+    isBlocked = false;
   }
+  
+
 }
