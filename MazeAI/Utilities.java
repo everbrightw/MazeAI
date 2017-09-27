@@ -31,19 +31,20 @@ class Utilities{
 	        	//initialize the board;
 	        	maze_map.add(new Node(row, column, line.charAt(row)));//add every single node of char to the MazeMap
 
-	        	// if(column == 0){MazeMap.getNode(row, column).left_child = null;}
-	        	// else{
+
+	        	if(column == 0){MazeMap.getNode(row, column).left_child = null;}
+	        	else if(row !=0){
 	        		
-	        	// 	MazeMap.getNode(row, column).left_child =
-	        	// 	MazeMap.getNode(row-1, column);
-	        	// 	MazeMap.getNode(row-1, column).right_child = MazeMap.getNode(row, column);
-	        	// }
-	        	// //y cases
-	        	// if(row == 0){MazeMap.getNode(row, column).up_child = null;}
-	        	// else{
-	        	// 	MazeMap.getNode(row, column).up_child = MazeMap.getNode(row, column -1);
-	        	// 	MazeMap.getNode(row, column - 1).down_child = MazeMap.getNode(row, column);
-	        	// }
+	        		MazeMap.getNode(row, column).left_child =
+	        		MazeMap.getNode(row-1, column);
+	        		MazeMap.getNode(row-1, column).right_child = MazeMap.getNode(row, column);
+	        	}
+	        	//y cases
+	        	if(row == 0){MazeMap.getNode(row, column).up_child = null;}
+	        	else if(column != 0){
+	        		MazeMap.getNode(row, column).up_child = MazeMap.getNode(row, column -1);
+	        		MazeMap.getNode(row, column - 1).down_child = MazeMap.getNode(row, column);
+	        	}
 	        	int position = (column * MazeMap.width + row);
 	        	System.out.println("row: "+ row + "column: " + column + "position: " + position);
 
