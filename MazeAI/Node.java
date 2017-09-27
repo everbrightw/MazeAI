@@ -1,6 +1,6 @@
 public class Node{
-	public int x_position;
-	public int y_position;
+	public int x;
+	public int y;
 	public Node up_child;
 	public Node down_child;
 	public Node left_child;
@@ -17,13 +17,13 @@ public class Node{
 	public int curr_distance;
 
   public int manhattanDistance(Node dest) {
-      int dist = Math.abs(this.x_position - dest.x_pisiton) + Math.abs(this.y_potistion - dest.y_position);
+      int dist = Math.abs(this.x - dest.x) + Math.abs(this.y - dest.y);
       return dist;
   }
 
   public Node(int x, int y){
-    this.x_position = x;
-    this.y_position = y;
+    this.x = x;
+    this.y = y;
 
     up_child = null;
     down_child = null;
