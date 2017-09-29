@@ -30,14 +30,19 @@ class Utilities{
 	        MazeMap.width = line.length();
 	        for (column = 0; column < line.length(); column++ ) {
 	        	//initialize the board;
+	        	System.out.println("33");
 	        	maze_map.add(new Node(row, column, line.charAt(column)));//add every single node of char to the MazeMap
 
-
+	        	System.out.println("35");
 	        	if(column == 0){MazeMap.getNode(row, column).left_child = null;} //left most
 	        	else{
+	        		System.out.println("38");
+	        		System.out.println("row" + row + "column" + column);
 	        		MazeMap.getNode(row, column).left_child =
 	        		MazeMap.getNode(row, column-1);
+	        			System.out.println("42");
 	        		MazeMap.getNode(row, column-1).right_child = MazeMap.getNode(row, column);
+	        			System.out.println("44");
 	        	}
 	        	//y cases
 	        	if(row == 0){MazeMap.getNode(row, column).up_child = null;}
