@@ -34,7 +34,12 @@ class Utilities{
 
 	        	maze_map.add(new Node(column, row, line.charAt(column)));//add every single node of char to the MazeMap
 
-
+				if (MazeMap.getNode(column, row).value == 'P'){
+					MazeMap.startNode = curr_Node;
+				}
+				if (MazeMap.getNode(column, row).value == '.'){
+					MazeMap.destination = curr_Node;
+				}
 	        	if(column == 0){MazeMap.getNode(column, row).left_child = null;} //left most
 	        	else{
 	        		MazeMap.getNode(column, row).left_child =
