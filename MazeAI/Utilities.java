@@ -15,7 +15,7 @@ class Utilities{
   	BufferedReader reader = null;
   	BufferedReader next_reader = null;
 	try {
-	    File file = new File(MEDIUM_MAZE);
+	    File file = new File(BIG_MAZE);
 	    reader = new BufferedReader(new FileReader(file));
 
 	    String line;

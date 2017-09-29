@@ -3,6 +3,7 @@ import java.util.*;
 
 class BFS{
 	//return type  Node: the destination of maze;
+	public static List<Node> visited_array = new ArrayList<Node>();
 	public static Node bfs(Node startNode){
 		LinkedList<Node> queue = new LinkedList<Node>();
 		Node curr_node = startNode;
@@ -17,12 +18,15 @@ class BFS{
 			for (Node it_child : curr_node.neighbor) {
 				if(!it_child.isBlocked && !it_child.isVisited){
 					it_child.isVisited = true;
+					visited_array.add(it_child);
 					queue.add(it_child);
 				}
 			}
 		}
 		return null;
-
 	}
+	// public static List<Node> findShortestPath(){
+
+	// }
 
 }
