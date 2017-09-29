@@ -40,8 +40,8 @@
       <file leaf-file-name="AStar.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AStar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="53" column="9" lean-forward="true" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
+            <state relative-caret-position="55">
+              <caret line="44" column="24" lean-forward="false" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -52,12 +52,13 @@
       <file leaf-file-name="MazeMap.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MazeMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="288">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1506672846652" expanded="false" signature="431:435" ph=" { " />
-                <marker date="1506672846652" expanded="false" signature="470:473" ph=" }" />
+                <marker date="1506673354207" expanded="false" signature="493:497" ph=" { " />
+                <marker date="1506673354207" expanded="false" signature="532:535" ph=" }" />
+                <marker date="1506673354207" expanded="true" signature="567:1548" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -66,11 +67,11 @@
       <file leaf-file-name="Utilities.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Utilities.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1980">
-              <caret line="55" column="62" lean-forward="false" selection-start-line="55" selection-start-column="62" selection-end-line="55" selection-end-column="62" />
+            <state relative-caret-position="2016">
+              <caret line="56" column="62" lean-forward="false" selection-start-line="56" selection-start-column="62" selection-end-line="56" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1506672574722" expanded="true" signature="2428:2537" ph="{...}" />
+                <marker date="1506673354178" expanded="true" signature="2493:2602" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -407,11 +408,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Utilities.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1980">
-          <caret line="55" column="62" lean-forward="false" selection-start-line="55" selection-start-column="62" selection-end-line="55" selection-end-column="62" />
+        <state relative-caret-position="2016">
+          <caret line="56" column="62" lean-forward="false" selection-start-line="56" selection-start-column="62" selection-end-line="56" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1506672574722" expanded="true" signature="2428:2537" ph="{...}" />
+            <marker date="1506673354178" expanded="true" signature="2493:2602" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -426,20 +427,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/MazeMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="288">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1506672846652" expanded="false" signature="431:435" ph=" { " />
-            <marker date="1506672846652" expanded="false" signature="470:473" ph=" }" />
+            <marker date="1506673354207" expanded="false" signature="493:497" ph=" { " />
+            <marker date="1506673354207" expanded="false" signature="532:535" ph=" }" />
+            <marker date="1506673354207" expanded="true" signature="567:1548" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AStar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="53" column="9" lean-forward="true" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
+        <state relative-caret-position="55">
+          <caret line="44" column="24" lean-forward="false" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

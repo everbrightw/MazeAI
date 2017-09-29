@@ -4,7 +4,8 @@ import java.util.ArrayList;
 class MazeMap{
 	public static List<Node> curr_map = new ArrayList<Node>();//Todo: node
 	public static int width;
-
+	public static Node startNode;
+	public static Node destination;
 
 
 
@@ -17,7 +18,7 @@ class MazeMap{
 		}
 		System.out.println("finish");
 	}
-	
+
 	public static Node getNode(int x, int y){
 		return curr_map.get(width * y + x);
 	}

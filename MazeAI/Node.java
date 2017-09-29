@@ -11,6 +11,7 @@ class Node{
     public Node left_child;
     public Node right_child;
     public Node parent;
+    
 
     //has visited;
     public Boolean isVisited;

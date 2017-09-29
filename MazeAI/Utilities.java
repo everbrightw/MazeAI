@@ -33,12 +33,13 @@ class Utilities{
 	        	//initialize the board;
 
 	        	maze_map.add(new Node(column, row, line.charAt(column)));//add every single node of char to the MazeMap
+	        	Node curr_node = MazeMap.getNode(column, row);
 
 				if (MazeMap.getNode(column, row).value == 'P'){
-					MazeMap.startNode = curr_Node;
+					MazeMap.startNode = curr_node;
 				}
 				if (MazeMap.getNode(column, row).value == '.'){
-					MazeMap.destination = curr_Node;
+					MazeMap.destination = curr_node;
 				}
 	        	if(column == 0){MazeMap.getNode(column, row).left_child = null;} //left most
 	        	else{
@@ -63,8 +64,10 @@ class Utilities{
 
 	    MazeMap.printMap();
 
-	    System.out.println("width" + MazeMap.width);
-	    System.out.println("column" + column);
+
+
+	    // System.out.println("width" + MazeMap.width);
+	    // System.out.println("column" + column);
 
 	} catch (IOException e) {
 	    e.printStackTrace();
