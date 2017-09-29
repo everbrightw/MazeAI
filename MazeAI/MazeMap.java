@@ -7,11 +7,13 @@ class MazeMap{
 
 
 
+  
 		public void initializeMap(int x, int y, String line){
 	    for(int i = 0; i < line.length(); i++){
 	      	this.curr_map.add(new Node(x, y, line.charAt(x)));
   }
 	  }
+
 
 
 	public static void printMap(List<Node> curr_map){
