@@ -1,4 +1,5 @@
-
+import java.util.List;
+import java.util.ArrayList;
 
 class Node{
 
@@ -21,6 +22,8 @@ class Node{
     //distance from goal state
     public int curr_distance;
 
+    public List<Node> neighbor;
+
 
 
     public int manhattanDistance(Node dest) {
@@ -31,12 +34,15 @@ class Node{
     public boolean equals (Node other){
         return ((this.x == other.x) && (this.y == other.y));
     }
+
+    //for A Star algorithm
     public int gScore(){
         if (this.parent == null){
             return 0;
         }
         return 1+this.parent.gScore();
     }
+    
     public Node(int x, int y, char value){
         this.x = x;
         this.y = y;
@@ -51,6 +57,12 @@ class Node{
         isVisited = false;
 
         isBlocked = false;
+        neighbor = new ArrayList<Node>();
     }
+
+    public boolean hasChild(){
+      return !neighbor.isEmpty();
+    }
+
 
 }

@@ -53,7 +53,9 @@ class Utilities{
 	        }
 	        row++;
 	    }
-	    MazeMap.setWalls();
+	    
+	    MazeMap.setWalls();//set walls and node blocked attribute
+
 	    MazeMap.printMap();
 
 	    System.out.println("width" + MazeMap.width);
