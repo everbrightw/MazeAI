@@ -10,9 +10,13 @@ public class MazeAI{
         // System.out.println("Node at 32,12" + MazeMap.getNode(31,11).down_child.right_child.value);
        
         	// System.out.println("node at  is blocked?" + MazeMap.getNode(59,21).isBlocked);
-        Node test = AStar.as();
-        System.out.println("destination: " + test.x + "  "+ test.y + "value:"+ test.value);
-        System.out.println("parent: " + test.parent.x + " y: "+ test.parent.y + "value:"+ test.value);
+        // Node test = AStar.as();
+        // System.out.println("destination: " + test.x + "  "+ test.y + "value:"+ test.value);
+        // System.out.println("parent: " + test.parent.x + " y: "+ test.parent.y + "value:"+ test.value);
+
+        //test for bfs
+        Node test = BFS.bfs(MazeMap.startNode);
+        System.out.println("destination" + test.value + "   " + "x :" + test.x + "y: " + test.y);
 
     }
 }

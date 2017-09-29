@@ -55,7 +55,7 @@ class Utilities{
 	        		MazeMap.getNode(column, row-1).down_child = MazeMap.getNode(column, row);
 	        	}
 	        	int position = (row * MazeMap.width + column);
-	        	System.out.println("row: "+ row + " column: " + column + " position: " + position);
+	        	// System.out.println("row: "+ row + " column: " + column + " position: " + position);
 	        }
 	        row++;
 	    }
