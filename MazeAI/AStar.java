@@ -6,8 +6,8 @@ public class Astar {
         long startTime = System.nanoTime();
 
         List<Node> map = MazeMap.curr_map;
-        ArrayList<Node> closedSet = new ArrayList<Node>();
-        ArrayList<Node> openSet = new ArratList<Node>();
+        List<Node> closedSet = new ArrayList<Node>();
+        List<Node> openSet = new ArratList<Node>();
         Node goal = MazeMap.destination;
 
         openSet.add(MazeMap.startNode);
