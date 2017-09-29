@@ -18,6 +18,8 @@ class Node{
 
 	//distance from goal state
 	public int curr_distance;
+  // arraylist of all children;
+  public List<Node> neighbor;
 
 
 
@@ -41,6 +43,9 @@ class Node{
     isVisited = false;
 
     isBlocked = false;
+
+    neighbor = new ArrayList<Node>;
+
   }
   
 }

@@ -30,6 +30,9 @@ class MazeMap{
 					curr_node.left_child = null;
 					flag++;
 				}
+				else{
+					curr_node.neighbor.add(curr_node.left_child);
+				}
 			}
 
 			if(curr_node.right_child != null){
@@ -37,12 +40,18 @@ class MazeMap{
 					curr_node.right_child = null;
 					flag++;
 				}
+				else{
+					curr_node.neighbor.add(curr_node.right_child);
+				}
 			}
-			
+
 			if(curr_node.down_child!=null){
 				if(curr_node.down_child.value == '%'){
 					curr_node.down_child = null;
 					flag++;
+				}
+				else{
+					curr_node.neighbor.add(curr_node.down_child);
 				}
 			}
 
@@ -51,8 +60,10 @@ class MazeMap{
 					curr_node.up_child = null;
 					flag++;
 				}
+				else{
+					curr_node.neighbor.add(curr_node.up_child);
+				}
 			}
-
 			if(flag >= 3){
 				curr_node.isBlocked = true;
 			}
