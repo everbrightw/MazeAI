@@ -7,6 +7,7 @@ class MazeMap{
 
 
 
+
 	public static void printMap(){
 		for (int i = 0; i < curr_map.size(); i++) {
 			System.out.print(curr_map.get(i).value);

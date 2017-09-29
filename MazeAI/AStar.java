@@ -42,7 +42,7 @@ public class Astar {
         System.out.println("Elapsed time (ms): " + deltaTime / 1000000 + "ms");
     }
 
-    public Node findMinF(ArrayList<Node> openSet) {
+    public int findMinF(ArrayList<Node> openSet) {
         int f;
         int result = 0;
         for (Node node : openSet) {
