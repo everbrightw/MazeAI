@@ -7,14 +7,7 @@ class MazeMap{
 
 
 
-		public void initializeMap(int x, int y, String line){
-	    for(int i = 0; i < line.length(); i++){
-	      	this.curr_map.add(new Node(x, y, line.charAt(x)));
-  }
-	  }
-
-
-	public static void printMap(List<Node> curr_map){
+	public static void printMap(){
 		for (int i = 0; i < curr_map.size(); i++) {
 			System.out.print(curr_map.get(i).value);
 			if((i+1) % width == 0){
@@ -25,5 +18,45 @@ class MazeMap{
 	}
 	public static Node getNode(int x, int y){
 		return curr_map.get(width * y + x);
+	}
+
+	public static void setWalls(){
+	
+		for(int i = 0; i < curr_map.size(); i ++ ){
+			int flag = 0;
+			Node curr_node = curr_map.get(i);
+			if(curr_node.left_child!=null){
+				if(curr_node.left_child.value == '%'){
+					curr_node.left_child = null;
+					flag++;
+				}
+			}
+
+			if(curr_node.right_child != null){
+				if(curr_node.right_child.value == '%'){
+					curr_node.right_child = null;
+					flag++;
+				}
+			}
+			
+			if(curr_node.down_child!=null){
+				if(curr_node.down_child.value == '%'){
+					curr_node.down_child = null;
+					flag++;
+				}
+			}
+
+			if(curr_node.up_child != null){
+				if(curr_node.up_child.value == '%'){
+					curr_node.up_child = null;
+					flag++;
+				}
+			}
+
+			if(flag >= 3){
+				curr_node.isBlocked = true;
+			}
+		}
+
 	}
 }

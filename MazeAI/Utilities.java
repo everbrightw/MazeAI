@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 class Utilities{
+
   public static void fileReader(){
   	final String BIG_MAZE = "BigMAze.txt";
   	final String MEDIUM_MAZE = "MediumMaze.txt";
@@ -30,32 +31,31 @@ class Utilities{
 	        MazeMap.width = line.length();
 	        for (column = 0; column < line.length(); column++ ) {
 	        	//initialize the board;
-	        	System.out.println("33");
-	        	maze_map.add(new Node(row, column, line.charAt(column)));//add every single node of char to the MazeMap
 
-	        	System.out.println("35");
-	        	if(column == 0){MazeMap.getNode(row, column).left_child = null;} //left most
+	        	maze_map.add(new Node(column, row, line.charAt(column)));//add every single node of char to the MazeMap
+
+
+	        	if(column == 0){MazeMap.getNode(column, row).left_child = null;} //left most
 	        	else{
-	        		System.out.println("38");
-	        		System.out.println("row" + row + "column" + column);
-	        		MazeMap.getNode(row, column).left_child =
-	        		MazeMap.getNode(row, column-1);
-	        			System.out.println("42");
-	        		MazeMap.getNode(row, column-1).right_child = MazeMap.getNode(row, column);
-	        			System.out.println("44");
+	        		MazeMap.getNode(column, row).left_child =
+	        		MazeMap.getNode(column-1, row);
+	        		MazeMap.getNode(column-1, row).right_child = MazeMap.getNode(column, row);
+
 	        	}
 	        	//y cases
-	        	if(row == 0){MazeMap.getNode(row, column).up_child = null;}
+	        	if(row == 0){MazeMap.getNode(column, row).up_child = null;} // up most
 	        	else{
-	        		MazeMap.getNode(row, column).up_child = MazeMap.getNode(row-1, column);
-	        		MazeMap.getNode(row-1, column).down_child = MazeMap.getNode(row, column);
+	        		MazeMap.getNode(column, row).up_child = MazeMap.getNode(column, row-1);
+	        		MazeMap.getNode(column, row-1).down_child = MazeMap.getNode(column, row);
 	        	}
 	        	int position = (row * MazeMap.width + column);
 	        	System.out.println("row: "+ row + " column: " + column + " position: " + position);
 	        }
 	        row++;
 	    }
-	    MazeMap.printMap(MazeMap.curr_map);
+	    MazeMap.setWalls();
+	    MazeMap.printMap();
+
 	    System.out.println("width" + MazeMap.width);
 	    System.out.println("column" + column);
 
@@ -69,6 +69,8 @@ class Utilities{
 	    }
 	}
   }
+
+
 
   public static void transformation(String curr_maze){
     for (int i = 0;i< curr_maze.length() ; i++ ) {
