@@ -22,6 +22,8 @@ class AStar {
             openSet.remove(currentNode);
             closedSet.add(currentNode);
             for (Node node : currentNode.neighbor) {
+                node.parent = currentNode;
+
                 if (closedSet.contains(node))
                     continue;        // Ignore the neighbor which is already evaluated.
 
@@ -34,7 +36,6 @@ class AStar {
                     continue;    // This is not a better path.
 
                 // This path is the best until now. Record it!
-                node.parent = currentNode;
                 node.gScore = tentative_gScore;
             }
 
