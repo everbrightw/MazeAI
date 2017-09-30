@@ -2,7 +2,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 class AStar {
-    public static Node as() {
+    public static void as() {
         long startTime = System.nanoTime();
         LinkedList<Node> queue = new LinkedList<Node>();
         queue.add(curr_node);//add start node to the queue;
@@ -49,7 +49,6 @@ class AStar {
         long endTime = System.nanoTime();
         long deltaTime = endTime - startTime;
         System.out.println("Elapsed time (ms): " + deltaTime / 1000000 + "ms");
-        return p;
     }
 
     public static int findMinF(List<Node> openSet) {
