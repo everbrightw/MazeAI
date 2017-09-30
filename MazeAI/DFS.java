@@ -3,15 +3,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DFS {
-  public Node doDFS(){
+  public Node doDFS(Node startNode){
      long start = System.nanoTime();
      Node curr;
      Stack<Node> s = new Stack<>();
-     s.push(MazeMap.curr_map.get(0));
+     s.push(startNode);
      List<Node> visited = new ArrayList<Node>();
      while(!s.empty()){
        curr = s.peek();
        visited.add(curr);
+       //curr.value = '.';
        if(curr.value == '.'){
           return curr;
          }
