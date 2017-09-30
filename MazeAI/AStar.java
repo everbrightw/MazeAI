@@ -7,7 +7,9 @@ class AStar {
     public static void as() {
         long startTime = System.nanoTime();
         LinkedList<Node> queue = new LinkedList<Node>();
+
         queue.add(MazeMap.startNode);//add start node to the queue;
+
         List<Node> map = MazeMap.curr_map;
         List<Node> closedSet = new ArrayList<Node>();
 
@@ -36,17 +38,14 @@ class AStar {
                     openSet.add(node);
 
                 // The distance from start to a neighbor
-                int tentative_gScore =currentNode.gScore() + currentNode.manhattanDistance(goal);
-                if (tentative_gScore >= node.gScore())
+                int tentative_gScore =node.gScore() + node.manhattanDistance(goal);
+                if (tentative_gScore >= currentNode.gScore())
                     continue;    // This is not a better path.
 
                 // This path is the best until now. Record it!
-                node.gScore = tentative_gScore;
-                if (!node.isBlocked) {
-                    queue.add(node);
-                }
+
+                currentNode.gScore = tentative_gScore;
             }
-            printPath(queue);
         }
         long endTime = System.nanoTime();
         long deltaTime = endTime - startTime;
@@ -66,10 +65,5 @@ class AStar {
         return result;
     }
 
-    public  static void printPath(LinkedList<Node> q){
-        for (int i = 0; i< q.size(); i++){
-            q.get(i).value = '$';
-        }
-    }
 
 }
