@@ -15,7 +15,7 @@ class Utilities{
   	BufferedReader reader = null;
   	BufferedReader next_reader = null;
 	try {
-	    File file = new File(BIG_MAZE);
+	    File file = new File(MEDIUM_MAZE);
 	    reader = new BufferedReader(new FileReader(file));
 
 	    String line;
@@ -86,6 +86,28 @@ class Utilities{
     for (int i = 0;i< curr_maze.length() ; i++ ) {
         System.out.print(curr_maze.charAt(i));
     }
+  }
+
+  public static List<Node> findTest(Node startNode, List<Node> visited){
+  	// int step =  0; 
+  	Stack<Node> s = new Stack<>();
+  	Node curr_node = new Node();
+  	curr_node = startNode;
+  	s.push(curr_node);
+  	while(!s.isEmpty()){
+  		curr_node = s.peek();
+  		s.pop();
+  		for (int i = 0; i < curr_node.neighbor.size(); i ++) {
+  			if(curr_node.neighbor[i].isVisited){
+  				s.push(curr_node.neighbor[i]);
+  			}
+  		}
+  		
+  	
+
+  	}
+
+
   }
 
 

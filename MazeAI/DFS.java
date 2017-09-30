@@ -3,15 +3,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DFS {
-  public Node doDFS(Node startNode){
-     long start = System.nanoTime();
+  public static List<Node> visited = new ArrayList<Node>();
+
+  public static Node doDFS(Node startNode){
+
      Node curr;
      Stack<Node> s = new Stack<>();
      s.push(startNode);
-     List<Node> visited = new ArrayList<Node>();
+    
      while(!s.empty()){
        curr = s.peek();
        visited.add(curr);
+       curr.isVisited = true;
+       s.pop();
        //curr.value = '.';
        if(curr.value == '.'){
           return curr;
@@ -22,9 +26,7 @@ public class DFS {
          }
        }
      }
-     long end = System.nanoTime();
-     long duration = end - start;
-     System.out.println("Using: " + duration/1000000 + "ms");
+ 
      return null;
   }
 }

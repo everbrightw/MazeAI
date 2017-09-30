@@ -4,8 +4,10 @@ import java.util.ArrayList;
 class MazeMap{
 	public static List<Node> curr_map = new ArrayList<Node>();//Todo: node
 	public static int width;
-	public static Node startNode;
-	public static Node destination;
+
+	public static Node startNode;//the start position
+	
+	public static Node destination;//the ending position
 
 
 
@@ -49,7 +51,7 @@ class MazeMap{
 			}
 
 			if(curr_node.down_child!=null){
-				if(curr_node.down_child.value == '%'){
+				if(curr_node.down_child.value == '%') {
 					curr_node.down_child = null;
 					flag++;
 				}
@@ -59,7 +61,7 @@ class MazeMap{
 			}
 
 			if(curr_node.up_child != null){
-				if(curr_node.up_child.value == '%'){
+				if(curr_node.up_child.value == '%' ){
 					curr_node.up_child = null;
 					flag++;
 				}
