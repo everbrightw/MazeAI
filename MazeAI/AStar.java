@@ -2,9 +2,10 @@ import java.util.List;
 import java.util.ArrayList;
 
 class AStar {
-    public static Node as() {
+    public static void as() {
         long startTime = System.nanoTime();
-
+        LinkedList<Node> queue = new LinkedList<Node>();
+        queue.add(curr_node);//add start node to the queue;
         List<Node> map = MazeMap.curr_map;
         List<Node> closedSet = new ArrayList<Node>();
 
@@ -18,11 +19,12 @@ class AStar {
             Node currentNode = openSet.get(findMinF(openSet));
             currentNode.value = '.';
             if (currentNode.equals(goal)) {
-                return currentNode;
+                break;
             }
             openSet.remove(currentNode);
             closedSet.add(currentNode);
             for (Node node : currentNode.neighbor) {
+
                 // node.parent = currentNode;
 
                 if (closedSet.contains(node))
@@ -38,14 +40,15 @@ class AStar {
 
                 // This path is the best until now. Record it!
                 node.gScore = tentative_gScore;
-
+                if (!node.isBlocked) {
+                    queue.addChild(node);
+                }
             }
-
+            printPath(queue);
         }
         long endTime = System.nanoTime();
         long deltaTime = endTime - startTime;
         System.out.println("Elapsed time (ms): " + deltaTime / 1000000 + "ms");
-        return null;
     }
 
     public static int findMinF(List<Node> openSet) {
@@ -59,6 +62,12 @@ class AStar {
             }
         }
         return result;
+    }
+
+    public  static void printPath(LinkedList<Node> q){
+        for (int i = 0; i< q.size(); i++){
+            q.get(i).value = '$';
+        }
     }
 
 }
