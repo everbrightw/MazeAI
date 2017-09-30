@@ -36,17 +36,17 @@ public class MazeAI{
         // }
 
         //test for bfs
-        Node test = BFS.bfs(MazeMap.startNode);
-        System.out.println("destination" + test.value + "   " + "x :" + test.x + "y: " + test.y);
-        long count = 0;
-        for(int i = 0; i<BFS.visited.size() ; i ++){
-            BFS.visited.get(i).value = '.';
-            count ++;
+        // Node test = BFS.bfs(MazeMap.startNode);
+        // System.out.println("destination" + test.value + "   " + "x :" + test.x + "y: " + test.y);
+        // long count = 0;
+        // for(int i = 0; i<BFS.visited.size() ; i ++){
+        //     BFS.visited.get(i).value = '.';
+        //     count ++;
 
-        }
-        MazeMap.printMap();
+        // }
+        // MazeMap.printMap();
 
-        System.out.println("expanded node: " + count);
+        // System.out.println("expanded node: " + count);
         long endTime = System.nanoTime();
         long deltaTime = endTime - startTime;
         System.out.println("Elapsed time (ms): " + deltaTime / 1000000 + "ms");
