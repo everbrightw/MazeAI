@@ -16,12 +16,15 @@ class AStar {
         MazeMap.startNode.gScore = 0;
         while (!openSet.isEmpty()) {
             Node currentNode = openSet.get(findMinF(openSet));
+            currentNode.value = '.';
             if (currentNode.equals(goal)) {
                 break;
             }
             openSet.remove(currentNode);
             closedSet.add(currentNode);
             for (Node node : currentNode.neighbor) {
+
+                // node.parent = currentNode;
 
                 if (closedSet.contains(node))
                     continue;        // Ignore the neighbor which is already evaluated.
@@ -37,6 +40,7 @@ class AStar {
                 // This path is the best until now. Record it!
 
                 node.gScore = tentative_gScore;
+
             }
 
         }

@@ -15,7 +15,7 @@ class Utilities{
   	BufferedReader reader = null;
   	BufferedReader next_reader = null;
 	try {
-	    File file = new File(MEDIUM_MAZE);
+	    File file = new File(BIG_MAZE);
 	    reader = new BufferedReader(new FileReader(file));
 
 	    String line;
@@ -55,7 +55,7 @@ class Utilities{
 	        		MazeMap.getNode(column, row-1).down_child = MazeMap.getNode(column, row);
 	        	}
 	        	int position = (row * MazeMap.width + column);
-	        	System.out.println("row: "+ row + " column: " + column + " position: " + position);
+	        	// System.out.println("row: "+ row + " column: " + column + " position: " + position);
 	        }
 	        row++;
 	    }
