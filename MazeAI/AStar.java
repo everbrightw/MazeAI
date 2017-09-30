@@ -4,7 +4,8 @@ import java.util.ArrayList;
 class AStar {
     public static Node as() {
         long startTime = System.nanoTime();
-
+        LinkedList<Node> queue = new LinkedList<Node>();
+        queue.add(curr_node);//add start node to the queue;
         List<Node> map = MazeMap.curr_map;
         List<Node> closedSet = new ArrayList<Node>();
 
@@ -38,11 +39,12 @@ class AStar {
                     continue;    // This is not a better path.
 
                 // This path is the best until now. Record it!
-
                 node.gScore = tentative_gScore;
-
+                if (!node.isBlocked) {
+                    queue.addChild(node);
+                }
             }
-
+            printPath(queue);
         }
         long endTime = System.nanoTime();
         long deltaTime = endTime - startTime;
@@ -61,6 +63,12 @@ class AStar {
             }
         }
         return result;
+    }
+
+    public  static void printPath(LinkedList<Node> q){
+        for (int i = 0; i< q.size(); i++){
+            q.get(i).value = '$';
+        }
     }
 
 }
