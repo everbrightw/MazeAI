@@ -17,12 +17,11 @@ class AStar {
         while (!openSet.isEmpty()) {
             Node currentNode = openSet.get(findMinF(openSet));
             if (currentNode.equals(goal)) {
-                return currentNode;
+                break;
             }
             openSet.remove(currentNode);
             closedSet.add(currentNode);
             for (Node node : currentNode.neighbor) {
-                node.parent = currentNode;
 
                 if (closedSet.contains(node))
                     continue;        // Ignore the neighbor which is already evaluated.
@@ -36,6 +35,7 @@ class AStar {
                     continue;    // This is not a better path.
 
                 // This path is the best until now. Record it!
+
                 node.gScore = tentative_gScore;
             }
 
@@ -43,7 +43,7 @@ class AStar {
         long endTime = System.nanoTime();
         long deltaTime = endTime - startTime;
         System.out.println("Elapsed time (ms): " + deltaTime / 1000000 + "ms");
-        return null;
+        return p;
     }
 
     public static int findMinF(List<Node> openSet) {
