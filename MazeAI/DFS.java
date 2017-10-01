@@ -36,7 +36,7 @@ public class DFS {
 
      while(end != startNode){
        Node parent = trace.get(end);
-       if(parent != startNode){
+       if(parent != startNode & parent!=null){
           parent.value = '.';
          }
        end = parent;
