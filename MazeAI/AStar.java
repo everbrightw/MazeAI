@@ -46,13 +46,16 @@ class AStar {
 
                 // This path is the best until now. Record it!
 
+                currentNode.children = node;
+                
                 //changed 
-                // node.value = '.';
+//                node.value == '.'
 
             }
         }
-    
-    
+
+        shortestPath().setShortestPath();
+
     }
 
     public static int findMinF(List<Node> openSet) {
@@ -67,6 +70,31 @@ class AStar {
         }
         return result;
     }
+
+    public static Node shortestPath() {
+        Stack<Node> s = new Stack<Node>();
+        int currentDepth = 0;
+        int minDepth = -1;
+        Node route = null;
+        s.push(Mazemap.startNode);
+        while(!s.empty()) {
+            Node curr = s.pop();
+            if (curr.children == null && curr.equals(Mazemap.destination)) {
+                if (minDepth == -1) {
+                    route = curr;
+                    minDepth = curr.gScore;
+                } else if (minDepth > curr.gScore) {
+                    route = curr;
+                    minDepth = curr.gScore;
+                }
+            }
+            for (Node t : curr.children) {
+                s.push(t);
+            }
+        }
+        return route;
+    }
+
 
 
 }
