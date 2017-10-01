@@ -5,6 +5,7 @@ class BFS{
 	//return type  Node: the destination of maze;
 
 	public static List<Node> visited = new ArrayList<Node>();
+	
 	public static Node bfs(Node startNode){
 		LinkedList<Node> queue = new LinkedList<Node>();
 		Node curr_node = startNode;

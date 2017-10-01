@@ -10,8 +10,9 @@ class Node{
     public Node down_child;
     public Node left_child;
     public Node right_child;
+
     public Node parent;
-    
+
 
     //has visited;
     public Boolean isVisited;
@@ -24,6 +25,8 @@ class Node{
     public int curr_distance;
 
     public List<Node> neighbor;
+
+    public Node nextPath ;
 
 
 
@@ -59,8 +62,27 @@ class Node{
 
         isBlocked = false;
         neighbor = new ArrayList<Node>();
+
+        nextPath = null;
     }
 
+    public Node(){
+       this.x = x;
+        this.y = y;
+
+        this.value = value;
+
+        up_child = null;
+        down_child = null;
+        left_child = null;
+        right_child = null;
+
+        isVisited = false;
+
+        isBlocked = false;
+        neighbor = new ArrayList<Node>();
+
+    }
     public boolean hasChild(){
       return !neighbor.isEmpty();
     }

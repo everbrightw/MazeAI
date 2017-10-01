@@ -8,6 +8,7 @@ import java.util.ArrayList;
 class Utilities{
 
   public static void fileReader(){
+  	
   	final String BIG_MAZE = "BigMAze.txt";
   	final String MEDIUM_MAZE = "MediumMaze.txt";
   	final String OPEN_MAZE = "OpenMaze.txt";

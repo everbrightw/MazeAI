@@ -33,18 +33,25 @@ class AStar {
 
                 if (closedSet.contains(node))
                     continue;        // Ignore the neighbor which is already evaluated.
+                node.gScore = currentNode.gScore+1;
+
 
                 if (openSet.contains(node) == false)    // Discover a new node
                     openSet.add(node);
 
                 // The distance from start to a neighbor
-                int tentative_gScore =node.gScore() + node.manhattanDistance(goal);
-                if (tentative_gScore >= currentNode.gScore())
+                int tentative_gScore = node.manhattanDistance(goal) + node.gScore;
+                if (tentative_gScore >= currentNode.gScore + currentNode.manhattanDistance(goal))
                     continue;    // This is not a better path.
 
                 // This path is the best until now. Record it!
+<<<<<<< HEAD
 
                 currentNode.gScore = tentative_gScore;
+=======
+//                currentNode.gScore = tentative_gScore;
+                node.value == '.'
+>>>>>>> 72313a49b29f9ce0f8525eb62e6432e56332b435
             }
         }
         long endTime = System.nanoTime();

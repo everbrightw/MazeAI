@@ -1,3 +1,5 @@
+import java.util.List;
+import java.util.ArrayList;
 
 
 public class MazeAI{
@@ -24,11 +26,13 @@ public class MazeAI{
 
 
         MazeMap.printMap();
-        AStar.as();
-        MazeMap.printMap();
 
 
-        // test for bfs
+        //test for AStar
+        // AStar.as();
+        // MazeMap.printMap();
+
+        // test for dfs
         // Node test = DFS.doDFS(MazeMap.startNode);
         // System.out.println("destination" + test.value + "   " + "x :" + test.x + "y: " + test.y);
         // for(int i = 0; i<DFS.visited.size() ; i ++){
@@ -36,14 +40,17 @@ public class MazeAI{
         // }
 
         //test for bfs
-        // Node test = BFS.bfs(MazeMap.startNode);
-        // System.out.println("destination" + test.value + "   " + "x :" + test.x + "y: " + test.y);
-        // long count = 0;
-        // for(int i = 0; i<BFS.visited.size() ; i ++){
-        //     BFS.visited.get(i).value = '.';
-        //     count ++;
+        Node test = BFS.bfs(MazeMap.startNode);
+        System.out.println("destination" + test.value + "   " + "x :" + test.x + "y: " + test.y);
+        long count = 0;
+        for(int i = 0; i<BFS.visited.size() ; i ++){
+            BFS.visited.get(i).value = '.';
+            count ++;
 
-        // }
+        }
+        MazeMap.printMap();
+        // Node testPath = Path.findShortestPath(MazeMap.startNode);
+       
         // MazeMap.printMap();
 
         // System.out.println("expanded node: " + count);
