@@ -24,17 +24,20 @@ public class MazeAI{
 
 
         MazeMap.printMap();
-        AStar.as();
+      //  AStar.as();
+      //  MazeMap.printMap();
+
+
+        //test for dfs
+        Node test = DFS.doDFS(MazeMap.startNode);
+        System.out.println("destination" + test.value + "   " + "x :" + test.x + "y: " + test.y);
+        //for(int i = 0; i<DFS.visited.size() ; i ++){
+          //  DFS.visited.get(i).value = '.';
+        //}
         MazeMap.printMap();
+        System.out.println("finish dfs");
 
-
-        // test for bfs
-        // Node test = DFS.doDFS(MazeMap.startNode);
-        // System.out.println("destination" + test.value + "   " + "x :" + test.x + "y: " + test.y);
-        // for(int i = 0; i<DFS.visited.size() ; i ++){
-        // 	DFS.visited.get(i).value = '.';
-        // }
-
+/**
         //test for bfs
         Node test = BFS.bfs(MazeMap.startNode);
         System.out.println("destination" + test.value + "   " + "x :" + test.x + "y: " + test.y);
@@ -50,6 +53,6 @@ public class MazeAI{
         long endTime = System.nanoTime();
         long deltaTime = endTime - startTime;
         System.out.println("Elapsed time (ms): " + deltaTime / 1000000 + "ms");
-
+**/
     }
 }
