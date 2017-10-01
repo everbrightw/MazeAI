@@ -5,7 +5,7 @@ import java.util.*;
 
 class AStar {
     public static void as() {
-        long startTime = System.nanoTime();
+      
         LinkedList<Node> queue = new LinkedList<Node>();
 
         queue.add(MazeMap.startNode);//add start node to the queue;
@@ -41,12 +41,13 @@ class AStar {
 
                 // The distance from start to a neighbor
                 int tentative_gScore = node.manhattanDistance(goal) + node.gScore;
-                if (tentative_gScore >= currentNode.gScore + currentNode.manhattanDistance(goal))
+                if (tentative_gScore > currentNode.gScore + currentNode.manhattanDistance(goal))
                     continue;    // This is not a better path.
 
                 // This path is the best until now. Record it!
                 currentNode.children.add(node);
                 node.parent = currentNode;
+
                 //changed 
 //                node.value == '.'
 
@@ -56,9 +57,6 @@ class AStar {
         shortestPath();
         Mazemap.destination.setShorestPath();
 
-        long endTime = System.nanoTime();
-        long deltaTime = endTime - startTime;
-        System.out.println("Elapsed time (ms): " + deltaTime / 1000000 + "ms");
     }
 
     public static int findMinF(List<Node> openSet) {

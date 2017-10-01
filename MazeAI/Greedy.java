@@ -19,7 +19,7 @@ class Greedy{
 			Node curr_node = pQueue.poll();
 			if(curr_node.value == '.'){
 				end = curr_node;
-        break;
+        		break;
 			}
 			else{
 				for (Node it_node : curr_node.neighbor) {
