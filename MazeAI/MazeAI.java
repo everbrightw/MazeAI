@@ -42,12 +42,14 @@ public class MazeAI{
         //test for bfs
         Node test = BFS.bfs(MazeMap.startNode);
         System.out.println("destination" + test.value + "   " + "x :" + test.x + "y: " + test.y);
-        long count = 0;
-        for(int i = 0; i<BFS.visited.size() ; i ++){
-            BFS.visited.get(i).value = '.';
-            count ++;
+        // long count = 0;
+        // for(int i = 0; i<BFS.visited.size() ; i ++){
+        //     BFS.visited.get(i).value = '.';
+        //     count ++;
 
-        }
+        // }
+        Path.findPath();
+
         MazeMap.printMap();
         // Node testPath = Path.findShortestPath(MazeMap.startNode);
        
