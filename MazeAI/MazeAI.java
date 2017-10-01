@@ -27,7 +27,6 @@ public class MazeAI{
 
         MazeMap.printMap();
 
-
         //test for AStar
         // AStar.as();
 
@@ -40,24 +39,28 @@ public class MazeAI{
         // 	DFS.visited.get(i).value = '.';
         // }
 
+
+/**
         //test for bfs
         Node test = BFS.bfs(MazeMap.startNode);
         System.out.println("destination" + test.value + "   " + "x :" + test.x + "y: " + test.y);
-        long count = 0;
-        for(int i = 0; i<BFS.visited.size() ; i ++){
-            BFS.visited.get(i).value = '.';
-            count ++;
+        // long count = 0;
+        // for(int i = 0; i<BFS.visited.size() ; i ++){
+        //     BFS.visited.get(i).value = '.';
+        //     count ++;
 
-        }
+        // }
+        Path.findPath();
+
         MazeMap.printMap();
         // Node testPath = Path.findShortestPath(MazeMap.startNode);
-       
+
         // MazeMap.printMap();
 
         // System.out.println("expanded node: " + count);
         long endTime = System.nanoTime();
         long deltaTime = endTime - startTime;
         System.out.println("Elapsed time (ms): " + deltaTime / 1000000 + "ms");
-
+**/
     }
 }

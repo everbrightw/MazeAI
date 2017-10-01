@@ -26,7 +26,8 @@ class Node{
     public int curr_distance;
 
     public List<Node> neighbor;
-
+    
+      
     public Node nextPath ;
 
 
