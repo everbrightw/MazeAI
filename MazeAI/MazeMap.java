@@ -1,4 +1,4 @@
-import java.util.List;
+import java.util.*;
 import java.util.ArrayList;
 
 class MazeMap{
@@ -8,6 +8,8 @@ class MazeMap{
 	public static Node startNode;//the start position
 	
 	public static Node destination;//the ending position
+
+	public static HashMap<Node, Node> trace=new HashMap<Node, Node>();
 
 
 

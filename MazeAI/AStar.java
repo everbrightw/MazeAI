@@ -1,10 +1,15 @@
 import java.util.List;
 import java.util.ArrayList;
+import java.io.*;
+import java.util.*;
 
 class AStar {
     public static void as() {
         long startTime = System.nanoTime();
         LinkedList<Node> queue = new LinkedList<Node>();
+
+        queue.add(MazeMap.startNode);//add start node to the queue;
+
         List<Node> map = MazeMap.curr_map;
         List<Node> closedSet = new ArrayList<Node>();
 
@@ -40,8 +45,10 @@ class AStar {
                     continue;    // This is not a better path.
 
                 // This path is the best until now. Record it!
-//                currentNode.gScore = tentative_gScore;
+                
+                //changed 
                 node.value == '.'
+
             }
         }
         long endTime = System.nanoTime();
