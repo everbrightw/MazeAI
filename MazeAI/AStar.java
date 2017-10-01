@@ -45,15 +45,16 @@ class AStar {
                     continue;    // This is not a better path.
 
                 // This path is the best until now. Record it!
-                currentNode.children = node;
-                
+                currentNode.children.add(node);
+                node.parent = currentNode;
                 //changed 
 //                node.value == '.'
 
             }
         }
 
-        shortestPath().setShortestPath();
+        shortestPath();
+        Mazemap.destination.setShorestPath();
 
         long endTime = System.nanoTime();
         long deltaTime = endTime - startTime;
@@ -81,7 +82,7 @@ class AStar {
         s.push(Mazemap.startNode);
         while(!s.empty()) {
             Node curr = s.pop();
-            if (curr.children == null && curr.equals(Mazemap.destination)) {
+            if (curr.children.size() == 0 && curr.equals(Mazemap.destination)) {
                 if (minDepth == -1) {
                     route = curr;
                     minDepth = curr.gScore;

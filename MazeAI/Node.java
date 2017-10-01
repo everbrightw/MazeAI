@@ -12,7 +12,7 @@ class Node{
     public Node right_child;
 
     public Node parent;
-    public Node children = null;
+    public List<Node> children = new ArrayList<Node>;
 
 
     //has visited;
@@ -86,9 +86,11 @@ class Node{
 
     }
     public static void setShortestPath(){
-        if (this.children == null) return;
+        if (this.parent == null)      {
+            return;
+        }
         this.value = '>';
-        this.children.setShortestPath();
+        this.parent.setShortestPath();
     }
     public boolean hasChild(){
       return !neighbor.isEmpty();
