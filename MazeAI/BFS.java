@@ -26,7 +26,7 @@ class BFS{
 			for (Node it_child : curr_node.neighbor) {
 				if(!it_child.isBlocked && !it_child.isVisited){
 					queue.add(it_child);
-					MazeMap.trace.put(it_child, curr_node);
+					// MazeMap.trace.put(it_child, curr_node);
 					
 				}
 

@@ -8,15 +8,15 @@ import java.util.ArrayList;
 class Utilities{
 
   public static void fileReader(){
-  	
+
   	final String BIG_MAZE = "BigMAze.txt";
   	final String MEDIUM_MAZE = "MediumMaze.txt";
-  	final String OPEN_MAZE = "OpenMaze.txt";
+  	final String OPEN_MAZE = "openmaze.txt";
 
   	BufferedReader reader = null;
   	BufferedReader next_reader = null;
 	try {
-	    File file = new File(MEDIUM_MAZE);
+	    File file = new File(OPEN_MAZE);
 	    reader = new BufferedReader(new FileReader(file));
 
 	    String line;
