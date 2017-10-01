@@ -30,6 +30,7 @@ public class MazeAI{
 
         //test for AStar
         // AStar.as();
+
         // MazeMap.printMap();
 
         // test for dfs
