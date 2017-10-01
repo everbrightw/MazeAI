@@ -12,6 +12,7 @@ class Node{
     public Node right_child;
 
     public Node parent;
+    public List<Node> children= null;
 
 
     //has visited;
