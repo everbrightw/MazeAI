@@ -45,13 +45,10 @@ class AStar {
                     continue;    // This is not a better path.
 
                 // This path is the best until now. Record it!
-<<<<<<< HEAD
-
-                currentNode.gScore = tentative_gScore;
-=======
-//                currentNode.gScore = tentative_gScore;
+                
+                //changed 
                 node.value == '.'
->>>>>>> 72313a49b29f9ce0f8525eb62e6432e56332b435
+
             }
         }
         long endTime = System.nanoTime();
