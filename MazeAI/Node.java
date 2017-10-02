@@ -85,7 +85,7 @@ class Node{
         neighbor = new ArrayList<Node>();
 
     }
-    public static void setShortestPath(){
+    public void setShortestPath(){
         if (this.parent == null)      {
             return;
         }

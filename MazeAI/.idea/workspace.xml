@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f92b5c0-e549-4431-9e06-e896e786af98" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/openmaze.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AStar.class" afterPath="$PROJECT_DIR$/AStar.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BFS.class" afterPath="$PROJECT_DIR$/BFS.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MazeAI.class" afterPath="$PROJECT_DIR$/MazeAI.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Utilities.class" afterPath="$PROJECT_DIR$/Utilities.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AStar.java" afterPath="$PROJECT_DIR$/AStar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BFS.java" afterPath="$PROJECT_DIR$/BFS.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Greedy.java" afterPath="$PROJECT_DIR$/Greedy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MazeAI.java" afterPath="$PROJECT_DIR$/MazeAI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Utilities.java" afterPath="$PROJECT_DIR$/Utilities.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Node.java" afterPath="$PROJECT_DIR$/Node.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,25 +31,25 @@
       <file leaf-file-name="Node.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Node.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="563">
-              <caret line="92" column="19" lean-forward="false" selection-start-line="92" selection-start-column="19" selection-end-line="92" selection-end-column="19" />
+            <state relative-caret-position="432">
+              <caret line="87" column="10" lean-forward="false" selection-start-line="87" selection-start-column="10" selection-end-line="87" selection-end-column="10" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#306#312#0" expanded="true" />
                 <element signature="e#796#797#0" expanded="true" />
                 <element signature="e#863#864#0" expanded="true" />
-                <element signature="e#1897#1898#0" expanded="true" />
-                <element signature="e#1937#1938#0" expanded="true" />
+                <element signature="e#1890#1891#0" expanded="true" />
+                <element signature="e#1930#1931#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AStar.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AStar.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AStar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="563">
-              <caret line="47" column="39" lean-forward="true" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
+            <state relative-caret-position="-625">
+              <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -72,7 +64,6 @@
               <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1506901766254" expanded="true" signature="1141:1143" ph="//..." />
               </folding>
             </state>
           </provider>
@@ -81,10 +72,10 @@
       <file leaf-file-name="MazeMap.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MazeMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
+            <state relative-caret-position="-1525">
               <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding>
-                <marker date="1506901303138" expanded="true" signature="7:17" ph="..." />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -114,14 +105,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BFS.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BFS.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BFS.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+            <state relative-caret-position="275">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Greedy.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Greedy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-324">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -143,8 +144,8 @@
         <option value="$PROJECT_DIR$/MazeMap.java" />
         <option value="$PROJECT_DIR$/Path.java" />
         <option value="$PROJECT_DIR$/MazeAI.java" />
-        <option value="$PROJECT_DIR$/Node.java" />
         <option value="$PROJECT_DIR$/BFS.java" />
+        <option value="$PROJECT_DIR$/Node.java" />
         <option value="$PROJECT_DIR$/AStar.java" />
       </list>
     </option>
@@ -512,8 +513,8 @@
             <element signature="e#306#312#0" expanded="true" />
             <element signature="e#796#797#0" expanded="true" />
             <element signature="e#863#864#0" expanded="true" />
-            <element signature="e#1897#1898#0" expanded="true" />
-            <element signature="e#1937#1938#0" expanded="true" />
+            <element signature="e#1890#1891#0" expanded="true" />
+            <element signature="e#1930#1931#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -543,7 +544,7 @@
         <state relative-caret-position="252">
           <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <marker date="1506901303138" expanded="true" signature="7:17" ph="..." />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -558,30 +559,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Node.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Utilities.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1502">
           <caret line="57" column="62" lean-forward="false" selection-start-line="57" selection-start-column="62" selection-end-line="57" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/MazeMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <marker date="1506901303138" expanded="true" signature="7:17" ph="..." />
           </folding>
         </state>
       </provider>
@@ -596,36 +579,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MazeAI.java">
+    <entry file="file://$PROJECT_DIR$/Greedy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1506901766254" expanded="true" signature="1141:1143" ph="//..." />
-          </folding>
+        <state relative-caret-position="-324">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Node.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="563">
-          <caret line="92" column="19" lean-forward="false" selection-start-line="92" selection-start-column="19" selection-end-line="92" selection-end-column="19" />
+        <state relative-caret-position="432">
+          <caret line="87" column="10" lean-forward="false" selection-start-line="87" selection-start-column="10" selection-end-line="87" selection-end-column="10" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#306#312#0" expanded="true" />
             <element signature="e#796#797#0" expanded="true" />
             <element signature="e#863#864#0" expanded="true" />
-            <element signature="e#1897#1898#0" expanded="true" />
-            <element signature="e#1937#1938#0" expanded="true" />
+            <element signature="e#1890#1891#0" expanded="true" />
+            <element signature="e#1930#1931#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BFS.java">
+    <entry file="file://$PROJECT_DIR$/MazeMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+        <state relative-caret-position="-1525">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MazeAI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -634,8 +632,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AStar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="563">
-          <caret line="47" column="39" lean-forward="true" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
+        <state relative-caret-position="-625">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BFS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

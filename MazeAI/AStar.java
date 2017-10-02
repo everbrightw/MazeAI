@@ -35,6 +35,7 @@ class AStar {
                     continue;        // Ignore the neighbor which is already evaluated.
                 node.gScore = currentNode.gScore+1;
 
+                node.parent = currentNode;
 
                 if (openSet.contains(node) == false)    // Discover a new node
                     openSet.add(node);
@@ -46,7 +47,6 @@ class AStar {
 
                 // This path is the best until now. Record it!
                 currentNode.children.add(node);
-                node.parent = currentNode;
 
                 //changed 
 //                node.value == '.'
@@ -55,7 +55,7 @@ class AStar {
         }
 
         shortestPath();
-        Mazemap.destination.setShorestPath();
+        MazeMap.destination.setShorestPath();
 
     }
 
@@ -77,10 +77,10 @@ class AStar {
         int currentDepth = 0;
         int minDepth = -1;
         Node route = null;
-        s.push(Mazemap.startNode);
+        s.push(MazeMap.startNode);
         while(!s.empty()) {
             Node curr = s.pop();
-            if (curr.children.size() == 0 && curr.equals(Mazemap.destination)) {
+            if (curr.children.size() == 0 && curr.equals(MazeMap.destination)) {
                 if (minDepth == -1) {
                     route = curr;
                     minDepth = curr.gScore;
