@@ -107,10 +107,10 @@ class Node{
         char[] index = ['1','2','3','4','5','6','7','8','9','a',
                 'b','c','d','e','f','g','h','i','j','k','l'];
         if (this.parent == null){
-            this.value = index.charAt(i);
+            this.value = index[i];
             return;
         }
-        this.index.charAt(i);
+        this.index[i];
         this.parent.setOrder(i+1);
     }
 

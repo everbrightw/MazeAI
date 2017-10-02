@@ -26,7 +26,7 @@ public class MazeAI{
 
 
         MazeMap.printMap();
-
+        Astar.mutiAs().setOrder(0);
         // test for AStar
         // AStar.as();
 
@@ -42,8 +42,8 @@ public class MazeAI{
         // MazeMap.printMap();
 
         // test for greedy
-        Node testGreedy = Greedy.greedySearch(MazeMap.startNode);
-       	Path.findPath();
+//        Node testGreedy = Greedy.greedySearch(MazeMap.startNode);
+//       	Path.findPath();
         MazeMap.printMap();
 
 
