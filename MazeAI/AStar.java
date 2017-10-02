@@ -20,7 +20,7 @@ class AStar {
         openSet.add(MazeMap.startNode);
         MazeMap.startNode.gScore = 0;
         while (!openSet.isEmpty()) {
-            Node currentNode = openSet.get(findMinF(openSet));
+            Node currentNode = openSet.get(findMinF(openSet,MazeMap.destination));
             currentNode.value = '.';
             if (currentNode.equals(goal)) {
                 break;
@@ -50,7 +50,7 @@ class AStar {
                 currentNode.children.add(node);
 
 
-                //changed 
+                //changed
 //                node.value == '.'
 
             }
@@ -62,11 +62,11 @@ class AStar {
 
     }
 
-    public static int findMinF(List<Node> openSet) {
+    public static int findMinF(List<Node> openSet, Node end) {
         int f = 0;
         int result = 0;
         for (Node node : openSet) {
-            int score = node.gScore + node.manhattanDistance(MazeMap.destination);
+            int score = node.gScore + node.manhattanDistance(end);
             if (score <= f || f == 0) {
                 f = score;
                 result = openSet.indexOf(node);
@@ -160,7 +160,7 @@ class AStar {
         openSet.add(start);
         start.gScore = 0;
         while (!openSet.isEmpty()) {
-            Node currentNode = openSet.get(findMinF(openSet));
+            Node currentNode = openSet.get(findMinF(openSet, goal));
             if (currentNode.equals(goal)) {
                 return goal.gScore;
             }

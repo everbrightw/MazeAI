@@ -22,7 +22,7 @@ public class MazeAI {
 
 
         MazeMap.printMap();
-      
+
         // for (Node it_node : MultiDots.destinations) {
         //     System.out.println(it_node.value);
         // }
@@ -83,12 +83,12 @@ public class MazeAI {
         }
         MazeMap.printMap();
         for (Edge it_edge : MST.path) {
-            MazeMap.startNode = it_edge.beginNode;
-            MazeMap.destination = it_edge.endNode;
-            BFS bfs = new BFS();
-            bfs.runBfs(MazeMap.startNode);
-            Path.findPath(bfs.trace);
+            System.out.println("startNode x : " + it_edge.beginNode.x + " startNode y : " + it_edge.beginNode.y);
+              System.out.println("endNode x : " + it_edge.endNode.x + " endNode y : " + it_edge.endNode.y);
+              System.out.println();
         }
+
+        Path.ordering();
         MazeMap.printMap();
 
 

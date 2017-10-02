@@ -45,6 +45,7 @@ class Utilities{
 
                 if (MazeMap.getNode(column, row).value == 'P'){
                     MazeMap.startNode = curr_node;
+                    MST.vertices.add(MazeMap.startNode);
                 }
                 if (MazeMap.getNode(column, row).value == '.'){
                     MazeMap.destination = curr_node;

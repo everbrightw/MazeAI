@@ -10,7 +10,7 @@ class MST {
     public static List<Edge> path = new ArrayList<Edge>();
 
     public static void setEdges() {
-        vertices.add(MazeMap.startNode);
+
         for (int i = 0; i < vertices.size(); i++) {
             for (int j = i + 1; j < vertices.size(); j++) {
                 Node startNode = vertices.get(i);
@@ -19,6 +19,7 @@ class MST {
                         AStar.getDistance(startNode, endNode)));
             }
         }
+        //Collections.reverse(edges);
         sortEdges();
     }
 
