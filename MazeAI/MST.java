@@ -37,7 +37,6 @@ class MST{
 	}
 
 	public static void addNodes(){
-		System.out.println("vertices size: " + vertices.size());
 		Dsets.addelements(vertices.size());
 	}
 
@@ -48,6 +47,7 @@ class MST{
 			int v = vertices.indexOf(edges.get(i).endNode);
 			edges.get(i).beginNode.degree++;
 			edges.get(i).beginNode.degree++;
+			//System.out.println("findu " + Dsets.find(u));
 			if(Dsets.find(u) != Dsets.find(v)){
 				
 				Dsets.setunion(u, v);
