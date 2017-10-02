@@ -10,6 +10,7 @@ class Node{
     public Node down_child;
     public Node left_child;
     public Node right_child;
+    public int depth = 0;
 
     public Node parent = null;
 
@@ -88,10 +89,11 @@ class Node{
     }
 
     public void setShortestPath(){
-        if (this.parent == null)      {
+        if (this.parent == null){
             return;
         }
         this.value = '>';
+        MazeMap.destination.depth++;
         this.parent.setShortestPath();
     }
 
