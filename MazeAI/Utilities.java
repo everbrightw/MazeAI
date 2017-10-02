@@ -60,7 +60,7 @@ class Utilities{
 	        }
 	        row++;
 	    }
-	    
+
 	    MazeMap.setWalls();//set walls and node blocked attribute
 
 	    MazeMap.printMap();
@@ -90,7 +90,7 @@ class Utilities{
   }
 
   // public static List<Node> findTest(Node startNode, List<Node> visited){
-  // 	// int step =  0; 
+  // 	// int step =  0;
   // 	Stack<Node> s = new Stack<>();
   // 	Node curr_node = new Node();
   // 	curr_node = startNode;
