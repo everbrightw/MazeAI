@@ -46,13 +46,18 @@ class MST{
 			int u = vertices.indexOf(edges.get(i).beginNode);
 			int v = vertices.indexOf(edges.get(i).endNode);
 			edges.get(i).beginNode.degree++;
+			System.out.println(edges.get(i).beginNode.value + edges.get(i).beginNode.degree);
 			edges.get(i).beginNode.degree++;
 			//System.out.println("findu " + Dsets.find(u));
 			if(Dsets.find(u) != Dsets.find(v)){
-				
+				if(edges.get(i).beginNode.equals(MazeMap.startNode) && edges.get(i).beginNode.degree < 2
+			 || edges.get(i).endNode.equals(MazeMap.startNode) && edges.get(i).endNode.degree < 2
+			 || !edges.get(i).beginNode.equals(MazeMap.startNode) && edges.get(i).beginNode.degree < 3
+			 || !edges.get(i).endNode.equals(MazeMap.startNode) && edges.get(i).endNode.degree < 3){
 				Dsets.setunion(u, v);
 				path.add(edges.get(i));//ssave the edges paths;
 				count ++;
+			}
 			}
 		}
 	}
