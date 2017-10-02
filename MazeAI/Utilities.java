@@ -23,7 +23,7 @@ class Utilities{
   	BufferedReader reader = null;
   	BufferedReader next_reader = null;
 	try {
-	    File file = new File(OPEN_MAZE);
+	    File file = new File(M_TINY_MAZE);
 	    reader = new BufferedReader(new FileReader(file));
 
 	    String line;
@@ -72,8 +72,7 @@ class Utilities{
 
 	    MazeMap.setWalls();//set walls and node blocked attribute
 
-	    MazeMap.printMap();
-
+	  
 
 
 	    // System.out.println("width" + MazeMap.width);

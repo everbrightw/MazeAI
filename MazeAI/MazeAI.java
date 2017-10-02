@@ -25,7 +25,13 @@ public class MazeAI{
         // System.out.println("parent: " + test.parent.x + " y: "+ test.parent.y + "value:"+ test.value);
 
 
-        MazeMap.printMap();
+        // MazeMap.printMap();
+        // MultiDots.findPath();
+        // for (Integer it_int : MultiDots.costDistance) {
+        //     System.out.println(it_int);
+        // }
+
+
 
         // test for AStar
         // AStar.as();
@@ -42,28 +48,30 @@ public class MazeAI{
         // MazeMap.printMap();
 
         // test for greedy
-        Node testGreedy = Greedy.greedySearch(MazeMap.startNode);
-       	Path.findPath();
-        MazeMap.printMap();
+        // Node testGreedy = Greedy.greedySearch(MazeMap.startNode);
+       	// Path.findPath();
+        // MazeMap.printMap();
 
 
         // test for bfs
-        // Node test = BFS.bfs(MazeMap.startNode);
+        // BFS bfs = new BFS();
+        // Node test = bfs.runBfs(MazeMap.startNode);
         // // System.out.println("destination" + test.value + "   " + "x :" + test.x + "y: " + test.y);
         // long count = 0;
-        // for(int i = 0; i<BFS.visited.size() ; i ++){
-        //     BFS.visited.get(i).value = '+';
+        // for(int i = 0; i<bfs.visited.size() ; i ++){
+        //     bfs.visited.get(i).value = '+';
         //     count ++;
 
         // }
-        // Path.findPath();
+        // Path.findPath(bfs.trace);
+        // MazeMap.printMap();
 
-        MazeMap.printMap();
+
         // Node testPath = Path.findShortestPath(MazeMap.startNode);
 
-       
+        //part 1.2
 
-        // System.out.println("expanded node: " + count);
+        MazeMap.printMap();
         long endTime = System.nanoTime();
         long deltaTime = endTime - startTime;
         System.out.println("Elapsed time (ms): " + deltaTime / 1000000 + "ms");
