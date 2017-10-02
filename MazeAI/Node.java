@@ -41,7 +41,6 @@ class Node {
         this.x = other.x;
         this.y = other.y;
         this.gScore = other.gScore;
-        this.goalLeft = other.goalLeft;
     }
 
     public Node(int x, int y, char value) {
