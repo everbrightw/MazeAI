@@ -99,6 +99,10 @@ class AStar {
         return route;
     }
 
-
-
+    public static void mutiAs(){
+        List<Node> map = MazeMap.curr_map;
+        List<Node> closedSet = new ArrayList<Node>();
+        List<Node> openSet = new ArrayList<Node>();
+        List<Node> goal = MazeMap.destination;
+    }
 }
