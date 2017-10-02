@@ -114,7 +114,6 @@ class AStar {
 
     public static Node mutiAs() {
 
-        List<Node> map = MazeMap.curr_map;
         List<Node> closedSet = new ArrayList<Node>();
         List<Node> openSet = new ArrayList<Node>();
         List<Node> goals = MultiDots.destinations;
@@ -128,6 +127,8 @@ class AStar {
             openSet.remove(currentNode);
             closedSet.add(currentNode);
             for (Node node : currentNode.goalLeft) {
+                if (closedSet.contains(node))
+                    continue;
                 Node newNode = new Node(node);
 
                 newNode.goalLeft = new ArrayList<Node>();
