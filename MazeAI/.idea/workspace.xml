@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9f92b5c0-e549-4431-9e06-e896e786af98" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AStar.java" afterPath="$PROJECT_DIR$/AStar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MazeAI.java" afterPath="$PROJECT_DIR$/MazeAI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Node.java" afterPath="$PROJECT_DIR$/Node.java" />
-    </list>
+    <list default="true" id="9f92b5c0-e549-4431-9e06-e896e786af98" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,11 +25,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Node.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Node.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Node.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="635">
-              <caret line="112" column="21" lean-forward="false" selection-start-line="112" selection-start-column="21" selection-end-line="112" selection-end-column="21" />
+            <state relative-caret-position="1895">
+              <caret line="108" column="33" lean-forward="true" selection-start-line="108" selection-start-column="33" selection-end-line="108" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#306#312#0" expanded="true" />
@@ -47,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AStar.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AStar.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AStar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1190">
-              <caret line="127" column="20" lean-forward="false" selection-start-line="127" selection-start-column="20" selection-end-line="127" selection-end-column="20" />
+            <state relative-caret-position="0">
+              <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -160,9 +156,9 @@
         <option value="$PROJECT_DIR$/MazeMap.java" />
         <option value="$PROJECT_DIR$/Path.java" />
         <option value="$PROJECT_DIR$/BFS.java" />
-        <option value="$PROJECT_DIR$/AStar.java" />
         <option value="$PROJECT_DIR$/MazeAI.java" />
         <option value="$PROJECT_DIR$/Node.java" />
+        <option value="$PROJECT_DIR$/AStar.java" />
       </list>
     </option>
   </component>
@@ -656,20 +652,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AStar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="127" column="20" lean-forward="false" selection-start-line="127" selection-start-column="20" selection-end-line="127" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="635">
-          <caret line="112" column="21" lean-forward="false" selection-start-line="112" selection-start-column="21" selection-end-line="112" selection-end-column="21" />
+        <state relative-caret-position="1895">
+          <caret line="108" column="33" lean-forward="true" selection-start-line="108" selection-start-column="33" selection-end-line="108" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#306#312#0" expanded="true" />
@@ -678,6 +664,16 @@
             <element signature="e#1127#1128#0" expanded="true" />
             <element signature="e#2507#2508#0" expanded="true" />
             <element signature="e#2547#2548#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AStar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
