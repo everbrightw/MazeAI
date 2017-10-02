@@ -25,8 +25,7 @@ class BFS {
             if (!visited.contains(curr_node)) {
                 visited.add(curr_node);
             }
-            // System.out.println("x: " + x + "y: " + y);
-            for (Node it_child : curr_node.neighbor) {
+                       for (Node it_child : curr_node.neighbor) {
                 if (!it_child.isBlocked && !visited.contains(it_child)) {
                     if (!queue.contains(it_child)) {
                         queue.add(it_child);

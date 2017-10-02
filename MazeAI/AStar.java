@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Stack;
 
 class AStar {
+    public static int expandedNode = 0;
     public static void as() {
 
         LinkedList<Node> queue = new LinkedList<Node>();
@@ -20,8 +21,9 @@ class AStar {
         openSet.add(MazeMap.startNode);
         MazeMap.startNode.gScore = 0;
         while (!openSet.isEmpty()) {
-            Node currentNode = openSet.get(findMinF(openSet));
-            currentNode.value = '.';
+            Node currentNode = openSet.get(findMinF(openSet, MazeMap.destination));
+            // currentNode.value = '.';
+            expandedNode ++;
             if (currentNode.equals(goal)) {
                 break;
             }
@@ -62,11 +64,11 @@ class AStar {
 
     }
 
-    public static int findMinF(List<Node> openSet) {
+    public static int findMinF(List<Node> openSet, Node destination) {
         int f = 0;
         int result = 0;
         for (Node node : openSet) {
-            int score = node.gScore + node.manhattanDistance(MazeMap.destination);
+            int score = node.gScore + node.manhattanDistance(destination);
             if (score <= f || f == 0) {
                 f = score;
                 result = openSet.indexOf(node);
@@ -160,7 +162,7 @@ class AStar {
         openSet.add(start);
         start.gScore = 0;
         while (!openSet.isEmpty()) {
-            Node currentNode = openSet.get(findMinF(openSet));
+            Node currentNode = openSet.get(findMinF(openSet,goal));
             if (currentNode.equals(goal)) {
                 return goal.gScore;
             }
@@ -186,10 +188,6 @@ class AStar {
 
                 // This path is the best until now. Record it!
                 currentNode.children.add(node);
-
-
-                //changed
-//                node.value == '.'
 
             }
         }

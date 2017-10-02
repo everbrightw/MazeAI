@@ -3,20 +3,21 @@ import java.util.List;
 
 class Node {
 
-    public int x;
-    public int y;
+    public int x;//current position for x
+    public int y;//current position for y
     public int gScore;
+    //linked node
     public Node up_child;
     public Node down_child;
     public Node left_child;
     public Node right_child;
+
     public int depth = 0;
     public List<Node> goalLeft = new ArrayList<Node>();
 
     public Node parent = null;
 
     public List<Node> children = new ArrayList<Node>();
-
 
     //has visited;
     public Boolean isVisited;
@@ -29,7 +30,6 @@ class Node {
     public int curr_distance;
 
     public List<Node> neighbor;
-
 
     public Node nextPath;
 
@@ -103,7 +103,7 @@ class Node {
         if (this.parent == null) {
             return;
         }
-        this.value = '>';
+        this.value = '.';
         MazeMap.destination.depth++;
         this.parent.setShortestPath();
     }
