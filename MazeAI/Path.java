@@ -8,10 +8,10 @@ class Path {
         Node end = MazeMap.destination;
         while(end != MazeMap.startNode){
             Node parent = trace.get(end);
-           	parent.value = '.';
+           	parent.value = '*';
             end = parent;
         }
-        MazeMap.startNode.value = 'P';
+        // MazeMap.startNode.value = 'P';
     }
     
 }
