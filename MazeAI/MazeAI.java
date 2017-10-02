@@ -76,6 +76,7 @@ public class MazeAI{
         MST.setEdges();
         MST.sortEdges();
         MST.addNodes();
+        System.out.println("wtf");
         MST.findMST();
 
         for (Edge it_edge : MST.edges) {
