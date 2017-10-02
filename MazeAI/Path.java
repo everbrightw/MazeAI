@@ -11,6 +11,7 @@ class Path {
            	parent.value = '*';
             end = parent;
         }
+        end = '*';
         // MazeMap.startNode.value = 'P';
     }
 
