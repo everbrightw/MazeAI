@@ -11,11 +11,8 @@ class Node{
     public Node left_child;
     public Node right_child;
 
-<<<<<<< HEAD
     public Node parent = null;
-=======
-    public Node parent;
->>>>>>> bbc3e30c3ee3aea48d6821b45aad9a36e35758f9
+
     public List<Node> children = new ArrayList<Node>();
 
 
