@@ -1,11 +1,7 @@
-import java.util.List;
-import java.util.ArrayList;
-
-
-public class MazeAI{
-    public static void main(String args[]){
-    	long startTime = System.nanoTime();
-       	Utilities.fileReader();
+public class MazeAI {
+    public static void main(String args[]) {
+        long startTime = System.nanoTime();
+        Utilities.fileReader();
 
         // MazeMap mazemap = new MazeMap(10,10);
         // mazemap[0][0] = 'c';
@@ -18,15 +14,17 @@ public class MazeAI{
         // System.out.println("destination: " + test.x + "  "+ test.y + "value:"+ test.value);
 
 //
-//        	System.out.println("node at  is blocked?" + MazeMap.getNode(59,21).isBlocked);
+        //System.out.println("node at  is blocked?" + MazeMap.getNode(59,21).isBlocked);
 //        Node test = AStar.as();
 //        System.out.println("destination: " + test.x + "  "+ test.y + "value:"+ test.value);
 
         // System.out.println("parent: " + test.parent.x + " y: "+ test.parent.y + "value:"+ test.value);
 
 
-        // MazeMap.printMap();
-        // AStar.mutiAs().setOrder(0);
+        MazeMap.printMap();
+        MazeMap.printMap();
+
+        AStar.mutiAs().setOrder(0);
         // for (Node it_node : MultiDots.destinations) {
         //     System.out.println(it_node.value);
         // }
@@ -48,7 +46,7 @@ public class MazeAI{
         // test for greedy
 
         // Node testGreedy = Greedy.greedySearch(MazeMap.startNode);
-       	// Path.findPath();
+        // Path.findPath();
         // MazeMap.printMap();
 
 //        Node testGreedy = Greedy.greedySearch(MazeMap.startNode);
@@ -73,11 +71,19 @@ public class MazeAI{
         //part 1.2
 
         MazeMap.printMap();
+
         MST.setEdges();
+<<<<<<< HEAD
         MST.sortEdges();
         MST.addNodes();
 
         MST.findMST();
+=======
+//        MST.sortEdges();
+//        MST.addNodes();
+//
+//        MST.findMST();
+>>>>>>> f0f05d2dfefee1eec77ac82600f39d9c057a2662
 
         for (Edge it_edge : MST.path) {
             System.out.println(it_edge.weight);
@@ -93,6 +99,7 @@ public class MazeAI{
             Path.findPath(bfs.trace);
         }
         MazeMap.printMap();
+
 
         long endTime = System.nanoTime();
         long deltaTime = endTime - startTime;

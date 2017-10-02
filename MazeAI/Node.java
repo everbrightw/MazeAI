@@ -1,7 +1,7 @@
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
-class Node{
+class Node {
 
     public int x;
     public int y;
@@ -11,7 +11,7 @@ class Node{
     public Node left_child;
     public Node right_child;
     public int depth = 0;
-    public List<Node> goalLeft= new ArrayList<Node>();
+    public List<Node> goalLeft = new ArrayList<Node>();
 
     public Node parent = null;
 
@@ -31,36 +31,19 @@ class Node{
     public List<Node> neighbor;
 
 
-    public Node nextPath ;
+    public Node nextPath;
 
     //used for MST
     public int degree;
 
 
-
-    public int manhattanDistance(Node dest) {
-        int dist = Math.abs(this.x - dest.x) + Math.abs(this.y - dest.y);
-        return dist;
-    }
-    public Node(Node other){
+    public Node(Node other) {
         this.x = other.x;
         this.y = other.y;
         this.gScore = other.gScore;
-        this.goalLeft = other.goalLeft;
-    }
-    public boolean equals (Node other){
-        return ((this.x == other.x) && (this.y == other.y));
     }
 
-    //for A Star algorithm
-    public int gScore(){
-        if (this.parent == null){
-            return 0;
-        }
-        return 1+this.parent.gScore();
-    }
-
-    public Node(int x, int y, char value){
+    public Node(int x, int y, char value) {
         this.x = x;
         this.y = y;
 
@@ -81,8 +64,8 @@ class Node{
         degree = 0;
     }
 
-    public Node(){
-       this.x = x;
+    public Node() {
+        this.x = x;
         this.y = y;
 
         this.value = value;
@@ -99,8 +82,25 @@ class Node{
 
     }
 
-    public void setShortestPath(){
-        if (this.parent == null){
+    public int manhattanDistance(Node dest) {
+        int dist = Math.abs(this.x - dest.x) + Math.abs(this.y - dest.y);
+        return dist;
+    }
+
+    public boolean equals(Node other) {
+        return ((this.x == other.x) && (this.y == other.y));
+    }
+
+    //for A Star algorithm
+    public int gScore() {
+        if (this.parent == null) {
+            return 0;
+        }
+        return 1 + this.parent.gScore();
+    }
+
+    public void setShortestPath() {
+        if (this.parent == null) {
             return;
         }
         this.value = '>';
@@ -108,19 +108,19 @@ class Node{
         this.parent.setShortestPath();
     }
 
-    public void setOrder(int i){
+    public void setOrder(int i) {
         String test = "123456789abcdefghijkl";
         char[] index = test.toCharArray();
-        if (this.parent == null){
+        if (this.parent == null) {
             this.value = index[i];
             return;
         }
         this.value = index[i];
-        this.parent.setOrder(i+1);
+        this.parent.setOrder(i + 1);
     }
 
-    public boolean hasChild(){
-      return !neighbor.isEmpty();
+    public boolean hasChild() {
+        return !neighbor.isEmpty();
     }
 
 
