@@ -5,8 +5,8 @@ import java.util.List;
 
 class BFS {
     //return type  Node: the destination of maze;
-    public static HashMap<Node, Node> trace = new HashMap<Node, Node>();
-    public static List<Node> visited = new ArrayList<Node>();
+    public HashMap<Node, Node> trace = new HashMap<Node, Node>();
+    public List<Node> visited = new ArrayList<Node>();
 
     public Node runBfs(Node startNode) {
         LinkedList<Node> queue = new LinkedList<Node>();
