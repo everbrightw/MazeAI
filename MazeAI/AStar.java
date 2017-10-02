@@ -54,7 +54,7 @@ class AStar {
             }
         }
 
-        shortestPath();
+//        shortestPath();
         MazeMap.destination.setShorestPath();
 
     }
