@@ -9,12 +9,12 @@ class Path {
             Node parent = trace.get(end);
 
             if(parent.value != 'P' && end.value != 'P'){
-
-           	parent.value = '*';
-            end.value = '*';
+           		parent.value = '*';
+            	end.value = '*';
           }
             end = parent;
         }        // MazeMap.startNode.value = 'P';
     }
+}
 
 

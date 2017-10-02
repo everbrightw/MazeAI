@@ -42,7 +42,7 @@ class MST {
 		Dsets.addelements(vertices.size());
 	}
 
-<<<<<<< HEAD
+
 	public static void findMST(){
 		int count = 0;
 		for(int i = 0; count < vertices.size() - 1; i ++){
@@ -68,8 +68,6 @@ class MST {
 		}
 	}
 
-=======
->>>>>>> f0f05d2dfefee1eec77ac82600f39d9c057a2662
 
 
 }
