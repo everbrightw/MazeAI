@@ -100,6 +100,7 @@ class AStar {
     }
 
     public static void mutiAs(){
+
         List<Node> map = MazeMap.curr_map;
         List<Node> closedSet = new ArrayList<Node>();
         List<Node> openSet = new ArrayList<Node>();
@@ -119,6 +120,7 @@ class AStar {
                 newNode.gScore = currentNode.gScore + getDistance(currentNode, newNode);//TODO: get distance(current, node)
                 // node.parent = currentNode;
                 openSet.add(newNode);
+                newNode.parent = currentNode;
                 //changed
                 //node.value == '.'
             }

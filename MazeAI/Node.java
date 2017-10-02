@@ -103,6 +103,17 @@ class Node{
         this.parent.setShortestPath();
     }
 
+    public void setOrder(int i){
+        char[] index = ['1','2','3','4','5','6','7','8','9','a',
+                'b','c','d','e','f','g','h','i','j','k','l'];
+        if (this.parent == null){
+            this.value = index.charAt(i);
+            return;
+        }
+        this.index.charAt(i);
+        this.parent.setOrder(i+1);
+    }
+
     public boolean hasChild(){
       return !neighbor.isEmpty();
     }
