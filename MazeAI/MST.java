@@ -24,6 +24,7 @@ class MST {
 
     public static void sortEdges() {
 
+<<<<<<< HEAD
         for (int i = 0; i < edges.size(); i++) {
             int min = i;
             for (int j = i + 1; j < edges.size(); j++) {
@@ -41,6 +42,32 @@ class MST {
         System.out.println("vertices size: " + vertices.size());
         Dsets.addelements(vertices.size());
     }
+=======
+	public static void addNodes(){
+		Dsets.addelements(vertices.size());
+	}
+
+	public static void findMST(){
+		int count = 0;
+		for(int i =0; count < vertices.size() - 1; i ++){
+			int u = vertices.indexOf(edges.get(i).beginNode);
+			int v = vertices.indexOf(edges.get(i).endNode);
+			edges.get(i).beginNode.degree++;
+			edges.get(i).endNode.degree++;
+			//System.out.println("findu " + Dsets.find(u));
+			if(Dsets.find(u) != Dsets.find(v)){
+			  if(edges.get(i).beginNode.equals(MazeMap.startNode) && edges.get(i).beginNode.degree < 2
+			  || edges.get(i).endNode.equals(MazeMap.startNode) && edges.get(i).endNode.degree < 2
+				|| !edges.get(i).beginNode.equals(MazeMap.startNode) && edges.get(i).beginNode.degree < 3
+				|| !edges.get(i).endNode.equals(MazeMap.startNode) && edges.get(i).endNode.degree < 3){
+				Dsets.setunion(u, v);
+				path.add(edges.get(i));//ssave the edges paths;
+				count ++;
+			}
+			}
+		}
+	}
+>>>>>>> 68a3d4ba31b06f5b790c3d0a8defe67812ec8817
 
     public static void findMST() {
         int count = 0;
