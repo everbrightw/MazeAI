@@ -13,6 +13,13 @@ class Utilities{
   	final String MEDIUM_MAZE = "MediumMaze.txt";
   	final String OPEN_MAZE = "openmaze.txt";
 
+  	//mutli dots
+
+  	final String M_TINY_MAZE = "m_tinymaze.txt";
+  	final String M_SMALL_MAZE = "m_smallmaze.txt";
+  	final String M_MEDIUM_MAZE = "m_mediummaze.txt";
+
+
   	BufferedReader reader = null;
   	BufferedReader next_reader = null;
 	try {
@@ -20,9 +27,9 @@ class Utilities{
 	    reader = new BufferedReader(new FileReader(file));
 
 	    String line;
-	    int line_times = 0;
-      int row = 0;
-      int column = 0;
+	  	int line_times = 0;
+      	int row = 0;
+      	int column = 0;
 	    List<Node> maze_map = MazeMap.curr_map;
 
 	    //detector for next line equals null
@@ -41,7 +48,9 @@ class Utilities{
 				}
 				if (MazeMap.getNode(column, row).value == '.'){
 					MazeMap.destination = curr_node;
+					MultiDots.destinations.add(curr_node);
 				}
+
 	        	if(column == 0){MazeMap.getNode(column, row).left_child = null;} //left most
 	        	else{
 	        		MazeMap.getNode(column, row).left_child =
