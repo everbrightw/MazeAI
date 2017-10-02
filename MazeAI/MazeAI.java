@@ -76,7 +76,7 @@ public class MazeAI{
         MST.setEdges();
         MST.sortEdges();
         MST.addNodes();
-        
+
         MST.findMST();
 
         for (Edge it_edge : MST.path) {
@@ -84,6 +84,7 @@ public class MazeAI{
             System.out.println("startnode" + it_edge.beginNode.value);
             System.out.println("endNode" + it_edge.endNode.value);
         }
+        MazeMap.printMap();
         for (Edge it_edge : MST.path) {
             MazeMap.startNode = it_edge.beginNode;
             MazeMap.destination = it_edge.endNode;

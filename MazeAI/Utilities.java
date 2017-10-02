@@ -23,7 +23,7 @@ class Utilities{
   	BufferedReader reader = null;
   	BufferedReader next_reader = null;
 	try {
-	    File file = new File(M_TINY_MAZE);
+	    File file = new File(M_MEDIUM_MAZE);
 	    reader = new BufferedReader(new FileReader(file));
 
 	    String line;
