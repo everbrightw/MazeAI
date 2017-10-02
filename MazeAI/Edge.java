@@ -1,5 +1,5 @@
 
-class Edge{
+class Edge implements Comparable{
 	Node beginNode;
 	Node endNode;
 	int weight;//acquired from astar getdistance()
@@ -10,6 +10,9 @@ class Edge{
 		this.weight = weight;
 	}
 
-	
+	@Override
+	public int compareTo(Edge other){
+		return this.weight - other.weight;
+	}
 
 }
