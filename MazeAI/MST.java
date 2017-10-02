@@ -43,24 +43,5 @@ class MST {
 	}
 
 
-    public static void findMST() {
-        int count = 0;
-        for (int i = 0; count < vertices.size() - 1; i++) {
-            int u = vertices.indexOf(edges.get(i).beginNode);
-            int v = vertices.indexOf(edges.get(i).endNode);
-            edges.get(i).beginNode.degree++;
-            edges.get(i).beginNode.degree++;
-            if (Dsets.find(u) != Dsets.find(v)) {
-                if (edges.get(i).beginNode.equals(MazeMap.startNode) && edges.get(i).beginNode.degree < 2
-                        || edges.get(i).endNode.equals(MazeMap.startNode) && edges.get(i).endNode.degree < 2
-                        || !edges.get(i).beginNode.equals(MazeMap.startNode) && edges.get(i).beginNode.degree < 3
-                        || !edges.get(i).endNode.equals(MazeMap.startNode) && edges.get(i).endNode.degree < 3)
-                    Dsets.setunion(u, v);
-                path.add(edges.get(i));//ssave the edges paths;
-                count++;
-            }
-        }
-    }
-
 
 }
