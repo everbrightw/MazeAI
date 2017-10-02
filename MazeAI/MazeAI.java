@@ -26,7 +26,10 @@ public class MazeAI{
 
 
         MazeMap.printMap();
-        Astar.mutiAs().setOrder(0);
+        AStar.mutiAs().setOrder(0);
+        for (Node it_node : MultiDots.destinations) {
+            System.out.println(it_node.value);
+        }
 
         // test for AStar
         // AStar.as();
@@ -50,7 +53,6 @@ public class MazeAI{
 
 //        Node testGreedy = Greedy.greedySearch(MazeMap.startNode);
 //       	Path.findPath();
-        MazeMap.printMap();
 
         // test for bfs
         // BFS bfs = new BFS();

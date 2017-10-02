@@ -105,8 +105,8 @@ class AStar {
         List<Node> closedSet = new ArrayList<Node>();
         List<Node> openSet = new ArrayList<Node>();
         List<Node> goals = MultiDots.destinations;
-        openSet.add(startNode);
-        startNode.goalLeft = goals;
+        openSet.add(MazeMap.startNode);
+        MazeMap.startNode.goalLeft = goals;
         while (!openSet.isEmpty()){
             Node currentNode = openSet.get(findMinF(openSet));
             if (currentNode.goalLeft.isEmpty()) {
@@ -116,6 +116,8 @@ class AStar {
             closedSet.add(currentNode);
             for (Node node : currentNode.goalLeft) {
                 Node newNode = new Node(node);
+            
+                newNode.goalLeft = currentNode.goalLeft;
                 newNode.goalLeft.remove(node);
                 newNode.gScore = currentNode.gScore + getDistance(currentNode, newNode);//TODO: get distance(current, node)
                 // node.parent = currentNode;
@@ -128,7 +130,7 @@ class AStar {
         return null;
     }
 
-    public int getDistance(Node start,Node end){
+    public static int getDistance(Node start,Node end){
         LinkedList<Node> queue = new LinkedList<Node>();
 
         queue.add(start);//add start node to the queue;

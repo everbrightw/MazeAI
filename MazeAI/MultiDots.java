@@ -7,26 +7,26 @@ class MultiDots{
 	public static List<Integer> costDistance = new ArrayList<Integer>();
 	
 	//BFS test
-	public static void findPath(){
+	// public static void findPath(){
 
-		Node startNode = MazeMap.startNode;
+	// 	Node startNode = MazeMap.startNode;
 
-		List<Node> mazemap = MazeMap.curr_map;
+	// 	List<Node> mazemap = MazeMap.curr_map;
 		
-		List<Node> curr_destination = destinations;//might wrong
-		for (Node it_node : curr_destination) {
-			BFS bfs = new BFS();
+	// 	List<Node> curr_destination = destinations;//might wrong
+	// 	for (Node it_node : curr_destination) {
+	// 		BFS bfs = new BFS();
 
-			MazeMap.destination = it_node;
+	// 		MazeMap.destination = it_node;
 
-			bfs.runBfs(startNode);
+	// 		bfs.runBfs(startNode);
 
-			int length = bfs.trace.size();
+	// 		int length = bfs.trace.size();
 
-			costDis.add(length);
-		}
+	// 		costDis.add(length);
+	// 	}
 
-	}
+	// }
 	//a star find multiple dots shortest path
 	public static void findShortesetPath(){
 

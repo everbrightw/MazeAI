@@ -43,7 +43,7 @@ class Node{
         this.x = other.x;
         this.y = other.y;
         this.gScore = other.gScore;
-        this.goalLeft = new ArrayList<Node>(other.goalLeft);
+        this.goalLeft = other.goalLeft;
     }
     public boolean equals (Node other){
         return ((this.x == other.x) && (this.y == other.y));
@@ -104,13 +104,13 @@ class Node{
     }
 
     public void setOrder(int i){
-        char[] index = ['1','2','3','4','5','6','7','8','9','a',
-                'b','c','d','e','f','g','h','i','j','k','l'];
+        String test = "123456789abcdefghijkl";
+        char[] index = test.toCharArray();
         if (this.parent == null){
             this.value = index[i];
             return;
         }
-        this.index[i];
+        this.value = index[i];
         this.parent.setOrder(i+1);
     }
 
