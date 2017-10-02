@@ -6,6 +6,7 @@ import java.util.Stack;
 public class DFS {
     public static List<Node> visited = new ArrayList<Node>();
     public static HashMap<Node, Node> trace = new HashMap<Node, Node>();
+    public static int pathCost = 0;
     public static Node end = null;
 
     public static Node doDFS(Node startNode) {
@@ -20,7 +21,7 @@ public class DFS {
             visited.add(curr);
             curr.isVisited = true;
             s.pop();
-            //curr.value = '.';
+          
             if (curr.value == '.') {
                 end = curr;
                 break big;
@@ -36,14 +37,13 @@ public class DFS {
 
         while (end != startNode) {
             Node parent = trace.get(end);
-            //System.out.println("parent location: " + parent.x + " " + parent.y);
             if (parent != startNode) {
 
                 parent.value = '.';
+                pathCost ++;
             }
             end = parent;
         }
-
         return end;
     }
 }

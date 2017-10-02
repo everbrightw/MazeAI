@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Stack;
 
 class AStar {
+    public static int expandedNode = 0;
     public static void as() {
 
         LinkedList<Node> queue = new LinkedList<Node>();
@@ -20,8 +21,9 @@ class AStar {
         openSet.add(MazeMap.startNode);
         MazeMap.startNode.gScore = 0;
         while (!openSet.isEmpty()) {
-            Node currentNode = openSet.get(findMinF(openSet,MazeMap.destination));
-            currentNode.value = '.';
+            Node currentNode = openSet.get(findMinF(openSet, MazeMap.destination));
+            // currentNode.value = '.';
+            expandedNode ++;
             if (currentNode.equals(goal)) {
                 break;
             }
@@ -62,11 +64,19 @@ class AStar {
 
     }
 
+<<<<<<< HEAD
     public static int findMinF(List<Node> openSet, Node end) {
         int f = 0;
         int result = 0;
         for (Node node : openSet) {
             int score = node.gScore + node.manhattanDistance(end);
+=======
+    public static int findMinF(List<Node> openSet, Node destination) {
+        int f = 0;
+        int result = 0;
+        for (Node node : openSet) {
+            int score = node.gScore + node.manhattanDistance(destination);
+>>>>>>> a3ac1f8f01691b4147a7e1d7418877ea553924ba
             if (score <= f || f == 0) {
                 f = score;
                 result = openSet.indexOf(node);
@@ -160,7 +170,11 @@ class AStar {
         openSet.add(start);
         start.gScore = 0;
         while (!openSet.isEmpty()) {
+<<<<<<< HEAD
             Node currentNode = openSet.get(findMinF(openSet, goal));
+=======
+            Node currentNode = openSet.get(findMinF(openSet,goal));
+>>>>>>> a3ac1f8f01691b4147a7e1d7418877ea553924ba
             if (currentNode.equals(goal)) {
                 return goal.gScore;
             }
@@ -186,10 +200,6 @@ class AStar {
 
                 // This path is the best until now. Record it!
                 currentNode.children.add(node);
-
-
-                //changed
-//                node.value == '.'
 
             }
         }

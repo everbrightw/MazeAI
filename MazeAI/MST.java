@@ -39,10 +39,10 @@ class MST {
     }
 
 
+
     public static void addNodes(){
         Dsets.addelements(vertices.size());
     }
-
 
     public static void findMST(){
         int count = 0;

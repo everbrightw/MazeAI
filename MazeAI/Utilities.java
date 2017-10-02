@@ -7,23 +7,23 @@ import java.util.ArrayList;
 
 class Utilities{
 
-  public static void fileReader(){
-
-    final String BIG_MAZE = "BigMAze.txt";
-    final String MEDIUM_MAZE = "MediumMaze.txt";
-    final String OPEN_MAZE = "openmaze.txt";
+    final static String BIG_MAZE = "BigMAze.txt";
+    final static String MEDIUM_MAZE = "MediumMaze.txt";
+    final static String OPEN_MAZE = "openmaze.txt";
 
     //mutli dots
+    final static String M_TINY_MAZE = "m_tinymaze.txt";
+    final static String M_SMALL_MAZE = "m_smallmaze.txt";
+    final static String M_MEDIUM_MAZE = "m_mediummaze.txt";
 
-    final String M_TINY_MAZE = "m_tinymaze.txt";
-    final String M_SMALL_MAZE = "m_smallmaze.txt";
-    final String M_MEDIUM_MAZE = "m_mediummaze.txt";
+
+  public static void fileReader(){
 
 
     BufferedReader reader = null;
     BufferedReader next_reader = null;
     try {
-        File file = new File(M_TINY_MAZE);
+        File file = new File(OPEN_MAZE);
         reader = new BufferedReader(new FileReader(file));
 
         String line;
@@ -49,6 +49,7 @@ class Utilities{
                 }
                 if (MazeMap.getNode(column, row).value == '.'){
                     MazeMap.destination = curr_node;
+                    // MazeMap.destination.value = 'E';
                     MultiDots.destinations.add(curr_node);
                     MST.vertices.add(curr_node);
                 }
@@ -75,11 +76,6 @@ class Utilities{
         MazeMap.setWalls();//set walls and node blocked attribute
 
 
-
-
-        // System.out.println("width" + MazeMap.width);
-        // System.out.println("column" + column);
-
     } catch (IOException e) {
         e.printStackTrace();
     } finally {
@@ -90,31 +86,5 @@ class Utilities{
         }
     }
   }
-
-
-
-  public static void transformation(String curr_maze){
-    for (int i = 0;i< curr_maze.length() ; i++ ) {
-        System.out.print(curr_maze.charAt(i));
-    }
-  }
-
-  // public static List<Node> findTest(Node startNode, List<Node> visited){
-  //    // int step =  0;
-  //    Stack<Node> s = new Stack<>();
-  //    Node curr_node = new Node();
-  //    curr_node = startNode;
-  //    s.push(curr_node);
-  //    while(!s.isEmpty()){
-  //        curr_node = s.peek();
-  //        s.pop();
-  //        for (int i = 0; i < curr_node.neighbor.size(); i ++) {
-  //            if(curr_node.neighbor[i].isVisited){
-  //                s.push(curr_node.neighbor[i]);
-  //            }
-  //        }
-  //    }
-
-  // }
 
 }
