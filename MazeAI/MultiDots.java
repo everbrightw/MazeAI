@@ -1,4 +1,4 @@
-import import java.util.*;
+import java.util.*;
 class MultiDots{
 	public static List<Node> destinations = new ArrayList<Node>();
 	// TODO: find all of the dots in the maze
@@ -15,4 +15,4 @@ class MultiDots{
 
 	}
 
-}	
+}
