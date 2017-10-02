@@ -33,6 +33,9 @@ class Node{
 
     public Node nextPath ;
 
+    //used for MST
+    public int degree;
+
 
 
     public int manhattanDistance(Node dest) {
@@ -74,6 +77,8 @@ class Node{
         neighbor = new ArrayList<Node>();
 
         nextPath = null;
+
+        degree = 0;
     }
 
     public Node(){

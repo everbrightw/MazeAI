@@ -49,7 +49,7 @@ class Utilities{
 				if (MazeMap.getNode(column, row).value == '.'){
 					MazeMap.destination = curr_node;
 					MultiDots.destinations.add(curr_node);
-          MST.vertices.add(curr_node);
+          			MST.vertices.add(curr_node);
 				}
 
 	        	if(column == 0){MazeMap.getNode(column, row).left_child = null;} //left most

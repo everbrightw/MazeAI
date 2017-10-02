@@ -25,11 +25,11 @@ public class MazeAI{
         // System.out.println("parent: " + test.parent.x + " y: "+ test.parent.y + "value:"+ test.value);
 
 
-        MazeMap.printMap();
-        AStar.mutiAs().setOrder(0);
-        for (Node it_node : MultiDots.destinations) {
-            System.out.println(it_node.value);
-        }
+        // MazeMap.printMap();
+        // AStar.mutiAs().setOrder(0);
+        // for (Node it_node : MultiDots.destinations) {
+        //     System.out.println(it_node.value);
+        // }
 
         // test for AStar
         // AStar.as();
@@ -73,6 +73,11 @@ public class MazeAI{
         //part 1.2
 
         MazeMap.printMap();
+        MST.setEdges();
+      
+        for (Edge it_edge : MST.edges) {
+            System.out.println(it_edge.weight);
+        }
         long endTime = System.nanoTime();
         long deltaTime = endTime - startTime;
         System.out.println("Elapsed time (ms): " + deltaTime / 1000000 + "ms");
