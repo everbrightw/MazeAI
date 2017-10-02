@@ -4,10 +4,10 @@ import java.util.Stack;
 
 class BFS{
 	//return type  Node: the destination of maze;
-	public static HashMap<Node, Node> trace=new HashMap<Node, Node>();
-	public static List<Node> visited = new ArrayList<Node>();
+	public  HashMap<Node, Node> trace=new HashMap<Node, Node>();
+	public 	List<Node> visited = new ArrayList<Node>();
 	
-	public static Node bfs(Node startNode){
+	public Node runBfs(Node startNode){
 		LinkedList<Node> queue = new LinkedList<Node>();
 
 		Node curr_node = startNode;
@@ -26,11 +26,11 @@ class BFS{
 			}
 			// System.out.println("x: " + x + "y: " + y);
 			for (Node it_child : curr_node.neighbor) {
-				if(!it_child.isBlocked && !it_child.isVisited){
+				if(!it_child.isBlocked && !visited.contains(it_child)){
 					if(!queue.contains(it_child)){
 						queue.add(it_child);
 				}
-					MazeMap.trace.put(it_child, curr_node);
+					this.trace.put(it_child, curr_node);
 					
 				}
 

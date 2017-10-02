@@ -4,10 +4,10 @@ import java.util.*;
 
 class Path {
 
-    public static void findPath(){
+    public static void findPath(HashMap<Node, Node> trace){
         Node end = MazeMap.destination;
         while(end != MazeMap.startNode){
-            Node parent = MazeMap.trace.get(end);
+            Node parent = trace.get(end);
            	parent.value = '.';
             end = parent;
         }
