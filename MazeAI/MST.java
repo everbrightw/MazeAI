@@ -53,6 +53,7 @@ class MST{
 			  || edges.get(i).endNode.equals(MazeMap.startNode) && edges.get(i).endNode.degree < 2
 				|| !edges.get(i).beginNode.equals(MazeMap.startNode) && edges.get(i).beginNode.degree < 3
 				|| !edges.get(i).endNode.equals(MazeMap.startNode) && edges.get(i).endNode.degree < 3){
+			  	
 				Dsets.setunion(u, v);
 				path.add(edges.get(i));//ssave the edges paths;
 				count ++;
