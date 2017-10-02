@@ -78,7 +78,7 @@ public class MazeAI{
         MST.addNodes();
         MST.findMST();
 
-        for (Edge it_edge : MST.edges) {
+        for (Edge it_edge : MST.path) {
             System.out.println(it_edge.weight);
         }
         long endTime = System.nanoTime();
