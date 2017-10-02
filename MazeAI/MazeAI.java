@@ -74,7 +74,10 @@ public class MazeAI{
 
         MazeMap.printMap();
         MST.setEdges();
-      
+        MST.sortEdges();
+        MST.addNodes();
+        MST.findMST();
+
         for (Edge it_edge : MST.edges) {
             System.out.println(it_edge.weight);
         }

@@ -1,12 +1,13 @@
 import java.util.*;
 
 class Dsets{
-  public static Vector<Integer> dsets;
+  public static Vector<Integer> dsets = new Vector<Integer>();
 
   //push num items to the dset
   public static void addelements(int num){
-      for(int i = 0; i < num; i++)
+      for(int i = 0; i < num; i++){
         dsets.add(-1);
+      }
   }
 
  //find the root of @num item and utilize path compression
