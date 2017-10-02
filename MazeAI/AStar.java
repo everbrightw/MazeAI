@@ -1,11 +1,11 @@
-import java.util.List;
 import java.util.ArrayList;
-import java.io.*;
-import java.util.*;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Stack;
 
 class AStar {
     public static void as() {
-      
+
         LinkedList<Node> queue = new LinkedList<Node>();
 
         queue.add(MazeMap.startNode);//add start node to the queue;
@@ -33,7 +33,7 @@ class AStar {
 
                 if (closedSet.contains(node))
                     continue;        // Ignore the neighbor which is already evaluated.
-                node.gScore = currentNode.gScore+1;
+                node.gScore = currentNode.gScore + 1;
 
                 node.parent = currentNode;
 
@@ -75,13 +75,26 @@ class AStar {
         return result;
     }
 
+    public static int findMinG(List<Node> openSet) {
+        int f = 0;
+        int result = 0;
+        for (Node node : openSet) {
+            int score = node.gScore;
+            if (score <= f || f == 0) {
+                f = score;
+                result = openSet.indexOf(node);
+            }
+        }
+        return result;
+    }
+
     public static Node shortestPath() {
         Stack<Node> s = new Stack<Node>();
         int currentDepth = 0;
         int minDepth = -1;
         Node route = null;
         s.push(MazeMap.startNode);
-        while(!s.empty()) {
+        while (!s.empty()) {
             Node curr = s.pop();
             if (curr.children.size() == 0 && curr.equals(MazeMap.destination)) {
                 if (minDepth == -1) {
@@ -99,7 +112,7 @@ class AStar {
         return route;
     }
 
-    public static Node mutiAs(){
+    public static Node mutiAs() {
 
         List<Node> map = MazeMap.curr_map;
         List<Node> closedSet = new ArrayList<Node>();
@@ -107,8 +120,8 @@ class AStar {
         List<Node> goals = MultiDots.destinations;
         openSet.add(MazeMap.startNode);
         MazeMap.startNode.goalLeft = goals;
-        while (!openSet.isEmpty()){
-            Node currentNode = openSet.get(findMinF(openSet));
+        while (!openSet.isEmpty()) {
+            Node currentNode = openSet.get(findMinG(openSet));
             if (currentNode.goalLeft.isEmpty()) {
                 return currentNode;
             }
@@ -116,8 +129,10 @@ class AStar {
             closedSet.add(currentNode);
             for (Node node : currentNode.goalLeft) {
                 Node newNode = new Node(node);
-            
-                newNode.goalLeft = currentNode.goalLeft;
+
+                newNode.goalLeft = new ArrayList<Node>();
+                newNode.goalLeft.addAll(currentNode.goalLeft);
+
                 newNode.goalLeft.remove(node);
                 newNode.gScore = currentNode.gScore + getDistance(currentNode, newNode);//TODO: get distance(current, node)
                 // node.parent = currentNode;
@@ -130,12 +145,11 @@ class AStar {
         return null;
     }
 
-    public static int getDistance(Node start,Node end){
+    public static int getDistance(Node start, Node end) {
         LinkedList<Node> queue = new LinkedList<Node>();
-
+        start = MazeMap.getNode(start.x, start.y);
         queue.add(start);//add start node to the queue;
 
-        List<Node> map = MazeMap.curr_map;
         List<Node> closedSet = new ArrayList<Node>();
 
         List<Node> openSet = new ArrayList<Node>();
@@ -157,7 +171,7 @@ class AStar {
 
                 if (closedSet.contains(node))
                     continue;        // Ignore the neighbor which is already evaluated.
-                node.gScore = currentNode.gScore+1;
+                node.gScore = currentNode.gScore + 1;
 
                 node.parent = currentNode;
 
