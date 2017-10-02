@@ -11,8 +11,12 @@ class Node{
     public Node left_child;
     public Node right_child;
 
+<<<<<<< HEAD
+    public Node parent = null;
+=======
     public Node parent;
-    public List<Node> children = new ArrayList<Node>;
+>>>>>>> bbc3e30c3ee3aea48d6821b45aad9a36e35758f9
+    public List<Node> children = new ArrayList<Node>();
 
 
     //has visited;
@@ -26,8 +30,8 @@ class Node{
     public int curr_distance;
 
     public List<Node> neighbor;
-    
-      
+
+
     public Node nextPath ;
 
 
@@ -48,7 +52,7 @@ class Node{
         }
         return 1+this.parent.gScore();
     }
-    
+
     public Node(int x, int y, char value){
         this.x = x;
         this.y = y;
@@ -85,6 +89,7 @@ class Node{
         neighbor = new ArrayList<Node>();
 
     }
+
     public void setShortestPath(){
         if (this.parent == null)      {
             return;
@@ -92,6 +97,7 @@ class Node{
         this.value = '>';
         this.parent.setShortestPath();
     }
+
     public boolean hasChild(){
       return !neighbor.isEmpty();
     }
