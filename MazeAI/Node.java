@@ -11,7 +11,8 @@ class Node{
     public Node left_child;
     public Node right_child;
 
-    public Node parent;
+    public Node parent = null;
+
     public List<Node> children = new ArrayList<Node>();
 
 
@@ -26,8 +27,8 @@ class Node{
     public int curr_distance;
 
     public List<Node> neighbor;
-    
-      
+
+
     public Node nextPath ;
 
 
@@ -48,7 +49,7 @@ class Node{
         }
         return 1+this.parent.gScore();
     }
-    
+
     public Node(int x, int y, char value){
         this.x = x;
         this.y = y;

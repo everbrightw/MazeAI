@@ -34,7 +34,9 @@ class AStar {
                 if (closedSet.contains(node))
                     continue;        // Ignore the neighbor which is already evaluated.
                 node.gScore = currentNode.gScore+1;
-                      node.parent = currentNode;
+
+                node.parent = currentNode;
+
 
                 if (openSet.contains(node) == false)    // Discover a new node
                     openSet.add(node);
@@ -46,13 +48,14 @@ class AStar {
 
                 // This path is the best until now. Record it!
                 currentNode.children.add(node);
-          
+
 
                 //changed 
 //                node.value == '.'
 
             }
         }
+
 
         // shortestPath();
         MazeMap.destination.setShortestPath();
