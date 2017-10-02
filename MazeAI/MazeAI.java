@@ -72,25 +72,27 @@ public class MazeAI {
 
         MazeMap.printMap();
 
-//         MST.setEdges();
-// //        MST.sortEdges();
-// //        MST.addNodes();
-// //
-// //        MST.findMST();
 
-//         for (Edge it_edge : MST.path) {
-//             System.out.println(it_edge.weight);
-//             System.out.println("startnode" + it_edge.beginNode.value);
-//             System.out.println("endNode" + it_edge.endNode.value);
-//         }
-//         for (Edge it_edge : MST.path) {
-//             MazeMap.startNode = it_edge.beginNode;
-//             MazeMap.destination = it_edge.endNode;
-//             BFS bfs = new BFS();
-//             bfs.runBfs(MazeMap.startNode);
-//             Path.findPath(bfs.trace);
-//         }
-//         MazeMap.printMap();
+        MST.setEdges();
+        MST.addNodes();
+        MST.findMST();
+
+
+        for (Edge it_edge : MST.path) {
+            System.out.println(it_edge.weight);
+            System.out.println("startnode" + it_edge.beginNode.value);
+            System.out.println("endNode" + it_edge.endNode.value);
+        }
+        MazeMap.printMap();
+        for (Edge it_edge : MST.path) {
+            MazeMap.startNode = it_edge.beginNode;
+            MazeMap.destination = it_edge.endNode;
+            BFS bfs = new BFS();
+            bfs.runBfs(MazeMap.startNode);
+            Path.findPath(bfs.trace);
+        }
+        MazeMap.printMap();
+
 
 
         long endTime = System.nanoTime();

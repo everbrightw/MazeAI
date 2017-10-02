@@ -42,6 +42,34 @@ class MST {
 		Dsets.addelements(vertices.size());
 	}
 
+<<<<<<< HEAD
+	public static void findMST(){
+		int count = 0;
+		for(int i = 0; count < vertices.size() - 1; i ++){
+			int u = vertices.indexOf(edges.get(i).beginNode);
+			int v = vertices.indexOf(edges.get(i).endNode);
+			//System.out.println("findu " + Dsets.find(u));
+			if(Dsets.find(u) != Dsets.find(v)){
+				if(((edges.get(i).beginNode.value == 'P' && edges.get(i).beginNode.degree < 1)
+			 && (edges.get(i).endNode.value != 'P' && edges.get(i).endNode.degree < 2))
+			 || ((edges.get(i).beginNode.value != 'P' && edges.get(i).beginNode.degree < 2)
+			 && (edges.get(i).endNode.value == 'P' && edges.get(i).endNode.degree < 1))
+			 || ((edges.get(i).beginNode.value != 'P' && edges.get(i).beginNode.degree < 2)
+			 && (edges.get(i).endNode.value != 'P' && edges.get(i).endNode.degree < 2))){
+				edges.get(i).beginNode.degree++;
+				edges.get(i).endNode.degree++;
+				System.out.println("value " + edges.get(i).beginNode.value + "degree " + edges.get(i).beginNode.degree);
+				System.out.println("value " + edges.get(i).endNode.value + "degree " + edges.get(i).beginNode.degree);
+				Dsets.setunion(u, v);
+				path.add(edges.get(i));//ssave the edges paths;
+				count ++;
+			}
+			}
+		}
+	}
+
+=======
+>>>>>>> f0f05d2dfefee1eec77ac82600f39d9c057a2662
 
 
 }
