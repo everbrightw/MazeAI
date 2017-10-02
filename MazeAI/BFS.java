@@ -21,12 +21,16 @@ class BFS{
 
 			curr_node = queue.poll();
 			curr_node.isVisited = true;
-			visited.add(curr_node);
+			if(!visited.contains(curr_node)){
+				visited.add(curr_node);
+			}
 			// System.out.println("x: " + x + "y: " + y);
 			for (Node it_child : curr_node.neighbor) {
 				if(!it_child.isBlocked && !it_child.isVisited){
-					queue.add(it_child);
-					// MazeMap.trace.put(it_child, curr_node);
+					if(!queue.contains(it_child)){
+						queue.add(it_child);
+				}
+					MazeMap.trace.put(it_child, curr_node);
 					
 				}
 

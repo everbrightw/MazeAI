@@ -28,7 +28,7 @@ public class MazeAI{
         MazeMap.printMap();
 
         // test for AStar
-        AStar.as();
+        // AStar.as();
 
         // MazeMap.printMap();
 
@@ -42,21 +42,21 @@ public class MazeAI{
         // MazeMap.printMap();
 
         // test for greedy
-        // Node testGreedy = Greedy.greedySearch(MazeMap.startNode);
-       	// Path.findPath();
-        // MazeMap.printMap();
+        Node testGreedy = Greedy.greedySearch(MazeMap.startNode);
+       	Path.findPath();
+        MazeMap.printMap();
 
 
         // test for bfs
         // Node test = BFS.bfs(MazeMap.startNode);
-        // System.out.println("destination" + test.value + "   " + "x :" + test.x + "y: " + test.y);
-        // // long count = 0;
-        // // for(int i = 0; i<BFS.visited.size() ; i ++){
-        // //     BFS.visited.get(i).value = '.';
-        // //     count ++;
+        // // System.out.println("destination" + test.value + "   " + "x :" + test.x + "y: " + test.y);
+        // long count = 0;
+        // for(int i = 0; i<BFS.visited.size() ; i ++){
+        //     BFS.visited.get(i).value = '+';
+        //     count ++;
 
-        // // // }
-        // // Path.findPath();
+        // }
+        // Path.findPath();
 
         MazeMap.printMap();
         // Node testPath = Path.findShortestPath(MazeMap.startNode);

@@ -25,7 +25,10 @@ class Greedy{
 				for (Node it_node : curr_node.neighbor) {
 					if(!it_node.isVisited && !it_node.isBlocked){
 						it_node.isVisited = true;
-						pQueue.add(it_node);
+            BFS.visited.add(it_node);
+            if(!pQueue.contains(it_node)){
+						    pQueue.add(it_node);
+          }
             MazeMap.trace.put(it_node, curr_node);
 					}
 				}

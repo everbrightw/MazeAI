@@ -71,7 +71,7 @@ class MazeMap{
 					curr_node.neighbor.add(curr_node.up_child);
 				}
 			}
-			if(flag >= 3 && !curr_node.value.equals(MazeMap.destination)){
+			if(flag >= 3 && curr_node.value != '.'){
 				curr_node.isBlocked = true;
 			}
 		}
