@@ -7,26 +7,14 @@ class Path {
         Node end = MazeMap.destination;
         while (end != MazeMap.startNode) {
             Node parent = trace.get(end);
-<<<<<<< HEAD
-            if(parent.value != 'P' && end.value != 'P'){
-=======
 
->>>>>>> f0f05d2dfefee1eec77ac82600f39d9c057a2662
+            if(parent.value != 'P' && end.value != 'P'){
+
            	parent.value = '*';
             end.value = '*';
           }
             end = parent;
-        }
-<<<<<<< HEAD
-        end = '*';
-=======
-
->>>>>>> 42ba0e6fec0bc29a3ed76e1dae362379f7d1ce83
-        // MazeMap.startNode.value = 'P';
+        }        // MazeMap.startNode.value = 'P';
     }
 
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> f0f05d2dfefee1eec77ac82600f39d9c057a2662
+

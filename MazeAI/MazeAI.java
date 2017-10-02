@@ -22,9 +22,7 @@ public class MazeAI {
 
 
         MazeMap.printMap();
-        MazeMap.printMap();
-
-        AStar.mutiAs().setOrder(0);
+      
         // for (Node it_node : MultiDots.destinations) {
         //     System.out.println(it_node.value);
         // }
