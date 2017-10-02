@@ -11,6 +11,7 @@ class Node{
     public Node left_child;
     public Node right_child;
     public int depth = 0;
+    public List<Node> goalLeft= new ArrayList<Node>();
 
     public Node parent = null;
 
@@ -38,7 +39,12 @@ class Node{
         int dist = Math.abs(this.x - dest.x) + Math.abs(this.y - dest.y);
         return dist;
     }
-
+    public Node(Node other){
+        this.x = other.x;
+        this.y = other.y;
+        this.gScore = other.gScore;
+        this.goalLeft = new ArrayList<Node>(other.goalLeft);
+    }
     public boolean equals (Node other){
         return ((this.x == other.x) && (this.y == other.y));
     }

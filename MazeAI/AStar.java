@@ -103,6 +103,77 @@ class AStar {
         List<Node> map = MazeMap.curr_map;
         List<Node> closedSet = new ArrayList<Node>();
         List<Node> openSet = new ArrayList<Node>();
-        List<Node> goal = MazeMap.destination;
+        List<Node> goals = MultiDots.destinations;
+        openSet.add(startNode);
+        startNode.goalLeft = goals;
+        while (!openSet.isEmpty()){
+            Node currentNode = openSet.get(findMinF(openSet));
+            if (currentNode.goalLeft.isEmpty()) {
+                break;
+            }
+            openSet.remove(currentNode);
+            closedSet.add(currentNode);
+            for (Node node : currentNode.goalLeft) {
+                Node newNode = new Node(node);
+                newNode.goalLeft.remove(node);
+                newNode.gScore = currentNode.gScore + getDistance(currentNode, newNode);//TODO: get distance(current, node)
+                // node.parent = currentNode;
+                openSet.add(newNode);
+                //changed
+                //node.value == '.'
+            }
+        }
+    }
+
+    public int getDistance(Node start,Node end){
+        LinkedList<Node> queue = new LinkedList<Node>();
+
+        queue.add(start);//add start node to the queue;
+
+        List<Node> map = MazeMap.curr_map;
+        List<Node> closedSet = new ArrayList<Node>();
+
+        List<Node> openSet = new ArrayList<Node>();
+
+        Node goal = end;
+
+        openSet.add(start);
+        start.gScore = 0;
+        while (!openSet.isEmpty()) {
+            Node currentNode = openSet.get(findMinF(openSet));
+            if (currentNode.equals(goal)) {
+                return goal.gScore;
+            }
+            openSet.remove(currentNode);
+            closedSet.add(currentNode);
+            for (Node node : currentNode.neighbor) {
+
+                // node.parent = currentNode;
+
+                if (closedSet.contains(node))
+                    continue;        // Ignore the neighbor which is already evaluated.
+                node.gScore = currentNode.gScore+1;
+
+                node.parent = currentNode;
+
+                if (openSet.contains(node) == false)    // Discover a new node
+                    openSet.add(node);
+
+                // The distance from start to a neighbor
+                int tentative_gScore = node.manhattanDistance(goal) + node.gScore;
+                if (tentative_gScore > currentNode.gScore + currentNode.manhattanDistance(goal))
+                    continue;    // This is not a better path.
+
+                // This path is the best until now. Record it!
+                currentNode.children.add(node);
+
+
+                //changed
+//                node.value == '.'
+
+            }
+        }
+        return 0;
+        // shortestPath();
     }
 }
