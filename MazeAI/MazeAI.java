@@ -25,13 +25,8 @@ public class MazeAI{
         // System.out.println("parent: " + test.parent.x + " y: "+ test.parent.y + "value:"+ test.value);
 
 
-        // MazeMap.printMap();
-        // MultiDots.findPath();
-        // for (Integer it_int : MultiDots.costDistance) {
-        //     System.out.println(it_int);
-        // }
-
-
+        MazeMap.printMap();
+        Astar.mutiAs().setOrder(0);
 
         // test for AStar
         // AStar.as();
@@ -48,10 +43,14 @@ public class MazeAI{
         // MazeMap.printMap();
 
         // test for greedy
+
         // Node testGreedy = Greedy.greedySearch(MazeMap.startNode);
        	// Path.findPath();
         // MazeMap.printMap();
 
+//        Node testGreedy = Greedy.greedySearch(MazeMap.startNode);
+//       	Path.findPath();
+        MazeMap.printMap();
 
         // test for bfs
         // BFS bfs = new BFS();

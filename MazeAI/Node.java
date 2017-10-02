@@ -110,7 +110,7 @@ class Node{
             this.value = index[i];
             return;
         }
-        this.index.charAt(i);
+        this.index[i];
         this.parent.setOrder(i+1);
     }
 

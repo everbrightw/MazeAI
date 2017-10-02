@@ -99,7 +99,7 @@ class AStar {
         return route;
     }
 
-    public static void mutiAs(){
+    public static Node mutiAs(){
 
         List<Node> map = MazeMap.curr_map;
         List<Node> closedSet = new ArrayList<Node>();
@@ -110,7 +110,7 @@ class AStar {
         while (!openSet.isEmpty()){
             Node currentNode = openSet.get(findMinF(openSet));
             if (currentNode.goalLeft.isEmpty()) {
-                break;
+                return currentNode;
             }
             openSet.remove(currentNode);
             closedSet.add(currentNode);
@@ -125,6 +125,7 @@ class AStar {
                 //node.value == '.'
             }
         }
+        return null;
     }
 
     public int getDistance(Node start,Node end){
