@@ -36,14 +36,11 @@ public class DFS {
 
      while(end != startNode){
        Node parent = trace.get(end);
-       if(parent1 == null){
-         System.out.println("FUCK");
-       }
-       System.out.println("parent location: " + parent.x + " " + parent.y);
+       //System.out.println("parent location: " + parent.x + " " + parent.y);
        if(parent != startNode){
           parent.value = '.';
          }
-       end = parent1;
+       end = parent;
      }
 
      return end;

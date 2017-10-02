@@ -6,7 +6,7 @@ class MazeMap{
 	public static int width;
 
 	public static Node startNode;//the start position
-	
+
 	public static Node destination;//the ending position
 
 	public static HashMap<Node, Node> trace=new HashMap<Node, Node>();
@@ -28,7 +28,7 @@ class MazeMap{
 	}
 
 	public static void setWalls(){
-	
+
 		for(int i = 0; i < curr_map.size(); i ++ ){
 			int flag = 0;
 			Node curr_node = curr_map.get(i);
@@ -71,7 +71,7 @@ class MazeMap{
 					curr_node.neighbor.add(curr_node.up_child);
 				}
 			}
-			if(flag >= 3){
+			if(flag >= 3 && curr_node.value != '.'){
 				curr_node.isBlocked = true;
 			}
 		}
