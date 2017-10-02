@@ -28,12 +28,12 @@ public class MazeAI{
         MazeMap.printMap();
 
         // test for AStar
-        // AStar.as();
+        AStar.as();
 
         // MazeMap.printMap();
 
         // test for dfs
-        Node test = DFS.doDFS(MazeMap.startNode);
+        // Node test = DFS.doDFS(MazeMap.startNode);
         // System.out.println("destination" + test.value + "   " + "x :" + test.x + "y: " + test.y);
         // // for(int i = 0; i<DFS.visited.size() ; i ++){
         // // 	DFS.visited.get(i).value = '.';
