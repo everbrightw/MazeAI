@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 class AStar {
     public static int expandedNode = 0;
@@ -22,8 +19,7 @@ class AStar {
         MazeMap.startNode.gScore = 0;
         while (!openSet.isEmpty()) {
             Node currentNode = openSet.get(findMinF(openSet, MazeMap.destination));
-            // currentNode.value = '.';
-            expandedNode ++;
+            currentNode.value = '.';
             if (currentNode.equals(goal)) {
                 break;
             }
@@ -64,19 +60,23 @@ class AStar {
 
     }
 
-<<<<<<< HEAD
     public static int findMinF(List<Node> openSet, Node end) {
         int f = 0;
         int result = 0;
         for (Node node : openSet) {
-            int score = node.gScore + node.manhattanDistance(end);
-=======
-    public static int findMinF(List<Node> openSet, Node destination) {
+            int score = node.gScore + node.manhattanDistance(MazeMap.destination);
+            if (score <= f || f == 0) {
+                f = score;
+                result = openSet.indexOf(node);
+            }
+        }
+        return result;
+    }
+    public static int findTempG(List<Node> openSet, Node end) {
         int f = 0;
         int result = 0;
         for (Node node : openSet) {
-            int score = node.gScore + node.manhattanDistance(destination);
->>>>>>> a3ac1f8f01691b4147a7e1d7418877ea553924ba
+            int score = node.tempG + node.manhattanDistance(end);
             if (score <= f || f == 0) {
                 f = score;
                 result = openSet.indexOf(node);
@@ -85,14 +85,14 @@ class AStar {
         return result;
     }
 
-    public static int findMinG(List<Node> openSet) {
+    public static Node findMinG(List<Node> openSet) {
         int f = 0;
-        int result = 0;
+        Node result = null;
         for (Node node : openSet) {
             int score = node.gScore;
             if (score <= f || f == 0) {
                 f = score;
-                result = openSet.indexOf(node);
+                result = node;
             }
         }
         return result;
@@ -124,36 +124,74 @@ class AStar {
 
     public static Node mutiAs() {
 
-        List<Node> closedSet = new ArrayList<Node>();
         List<Node> openSet = new ArrayList<Node>();
         List<Node> goals = MultiDots.destinations;
-        openSet.add(MazeMap.startNode);
+        MazeMap.startNode.gScore = 0;
         MazeMap.startNode.goalLeft = goals;
+        openSet.add(MazeMap.startNode);
         while (!openSet.isEmpty()) {
-            Node currentNode = openSet.get(findMinG(openSet));
-            if (currentNode.goalLeft.isEmpty()) {
+            Node currentNode = findMinG(openSet);
+//            System.out.println("\n g: " + currentNode.gScore);
+            if (currentNode.goalLeft.size()==0) {
                 return currentNode;
             }
             openSet.remove(currentNode);
-            closedSet.add(currentNode);
-            for (Node node : currentNode.goalLeft) {
-                if (closedSet.contains(node))
-                    continue;
-                Node newNode = new Node(node);
+            Node lowest, second, third;
+            List<Node> list = sortG(currentNode.goalLeft, currentNode);
+            if (!list.isEmpty()) {
+                lowest = new Node(list.get(0));
+                lowest.gScore = currentNode.gScore + getDistance(currentNode, lowest);
+                lowest.goalLeft = new ArrayList<Node>();
+                lowest.goalLeft.addAll(currentNode.goalLeft);
+                lowest.goalLeft.remove(list.get(0));
+                lowest.parent = currentNode;
+                openSet.add(lowest);
+                expandedNode++;
+            }
+            if (list.size()>=2) {
+                second = new Node(list.get(1));
+                second.gScore = currentNode.gScore + getDistance(currentNode, second);
 
-                newNode.goalLeft = new ArrayList<Node>();
-                newNode.goalLeft.addAll(currentNode.goalLeft);
+                second.goalLeft = new ArrayList<Node>();
+                second.goalLeft.addAll(currentNode.goalLeft);
+                second.goalLeft.remove(list.get(1));
+                second.parent = currentNode;
+                openSet.add(second);
+                expandedNode++;
 
-                newNode.goalLeft.remove(node);
-                newNode.gScore = currentNode.gScore + getDistance(currentNode, newNode);//TODO: get distance(current, node)
-                // node.parent = currentNode;
-                openSet.add(newNode);
-                newNode.parent = currentNode;
-                //changed
-                //node.value == '.'
+            }
+            if (list.size()>=3 && list.get(2).tempG == list.get(1).tempG) {
+                third = new Node(list.get(2));
+                third.goalLeft = new ArrayList<Node>();
+                third.gScore = currentNode.gScore + getDistance(currentNode, third);
+                third.goalLeft.addAll(currentNode.goalLeft);
+                third.goalLeft.remove(list.get(2));
+                third.parent = currentNode;
+                openSet.add(third);
+                expandedNode++;
+
             }
         }
         return null;
+    }
+
+    public static List<Node> sortG(List<Node> list, Node currentNode){
+        for (Node node: list) {
+            node.tempG = currentNode.gScore + getDistance(currentNode, node);
+        }
+        Collections.reverse(list);
+        Collections.sort(list, new Comparator<Node>() {
+            @Override
+            public int compare(Node n1, Node n2) {
+
+                if (n1.tempG > n2.tempG)
+                    return 1;
+                if (n1.tempG< n2.tempG)
+                    return -1;
+                return 0;
+            }
+        });
+        return list;
     }
 
     public static int getDistance(Node start, Node end) {
@@ -170,11 +208,7 @@ class AStar {
         openSet.add(start);
         start.gScore = 0;
         while (!openSet.isEmpty()) {
-<<<<<<< HEAD
             Node currentNode = openSet.get(findMinF(openSet, goal));
-=======
-            Node currentNode = openSet.get(findMinF(openSet,goal));
->>>>>>> a3ac1f8f01691b4147a7e1d7418877ea553924ba
             if (currentNode.equals(goal)) {
                 return goal.gScore;
             }
@@ -188,7 +222,6 @@ class AStar {
                     continue;        // Ignore the neighbor which is already evaluated.
                 node.gScore = currentNode.gScore + 1;
 
-                node.parent = currentNode;
 
                 if (openSet.contains(node) == false)    // Discover a new node
                     openSet.add(node);
@@ -200,6 +233,10 @@ class AStar {
 
                 // This path is the best until now. Record it!
                 currentNode.children.add(node);
+
+
+                //changed
+//                node.value == '.'
 
             }
         }
