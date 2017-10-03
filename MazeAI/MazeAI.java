@@ -4,11 +4,11 @@ public class MazeAI {
     public static void main(String args[]) {
         long startTime = System.nanoTime();
         Utilities.fileReader();
-        MazeMap.printMap();
-        // test for AStar
+        // MazeMap.printMap();
+        // // test for AStar
         // AStar.as();
         // MazeMap.printMap();
-        // System.out.println("Expanded Node : " +
+        // System.out.println("Path Cost:  " + AStar.getDistance(MazeMap.startNode, MazeMap.destination)); 
         // System.out.println("Expanded Node: " + AStar.expandedNode);
 
         // test for bfs
@@ -49,6 +49,7 @@ public class MazeAI {
 
         Path.ordering();
         MazeMap.printMap();
+        System.out.println("expanded node: " + AStar.expandedNode);
         System.out.println("path cost: " + mutliCost);
 
 
