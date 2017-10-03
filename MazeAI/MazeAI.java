@@ -3,9 +3,13 @@ public class MazeAI {
 
     public static void main(String args[]) {
         long startTime = System.nanoTime();
+
+        //initialize nodes and read maze from txt file
         Utilities.fileReader();
+        
         // MazeMap.printMap();
-        // // test for AStar
+
+        // test for AStar
         // AStar.as();
         // MazeMap.printMap();
         // System.out.println("Path Cost:  " + AStar.getDistance(MazeMap.startNode, MazeMap.destination)); 
@@ -18,10 +22,6 @@ public class MazeAI {
         // MazeMap.printMap();
         // System.out.println("Expanded Node: " + bfs.visited.size());
         // System.out.println("Path Cost: " + Path.pathCost);
-
-
-
-        // Node testPath = Path.findShortestPath(MazeMap.startNode);
 
         //part 1.2
 

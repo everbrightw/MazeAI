@@ -35,6 +35,7 @@ class Node {
 
     //used for MST
     public int degree;
+    public static int tempG = 0;
 
 
     public Node(Node other) {

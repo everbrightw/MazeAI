@@ -34,9 +34,10 @@ public class DFS {
             }
         }
 
-
-        while (end != startNode) { //back trace to link the parent and its child
-                                  //until it finds the start from end
+        //same as the Path class
+        while (end != startNode) {
+         //back trace to link the parent and its child
+        //until it finds the start from end
             Node parent = trace.get(end);
             if (parent != startNode) {
 

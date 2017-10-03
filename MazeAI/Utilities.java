@@ -49,7 +49,6 @@ class Utilities{
                 }
                 if (MazeMap.getNode(column, row).value == '.'){
                     MazeMap.destination = curr_node;
-                    // MazeMap.destination.value = 'E';
                     MultiDots.destinations.add(curr_node);
                     MST.vertices.add(curr_node);
                 }
@@ -68,7 +67,6 @@ class Utilities{
                     MazeMap.getNode(column, row-1).down_child = MazeMap.getNode(column, row);
                 }
                 int position = (row * MazeMap.width + column);
-                // System.out.println("row: "+ row + " column: " + column + " position: " + position);
             }
             row++;
         }

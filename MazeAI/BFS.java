@@ -4,10 +4,11 @@ import java.util.LinkedList;
 import java.util.List;
 
 class BFS {
-    //return type  Node: the destination of maze;
+    
     public HashMap<Node, Node> trace = new HashMap<Node, Node>();
     public List<Node> visited = new ArrayList<Node>();
-
+    
+    //return type  Node: the destination of maze;
     public Node runBfs(Node startNode) {
         LinkedList<Node> queue = new LinkedList<Node>();
 
@@ -25,7 +26,8 @@ class BFS {
             if (!visited.contains(curr_node)) {
                 visited.add(curr_node);
             }
-                       for (Node it_child : curr_node.neighbor) {
+
+            for (Node it_child : curr_node.neighbor) {
                 if (!it_child.isBlocked && !visited.contains(it_child)) {
                     if (!queue.contains(it_child)) {
                         queue.add(it_child);
