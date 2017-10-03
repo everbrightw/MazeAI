@@ -5,6 +5,7 @@ import java.util.Stack;
 
 class AStar {
     public static int expandedNode = 0;
+    
     public static void as() {
 
         LinkedList<Node> queue = new LinkedList<Node>();

@@ -32,12 +32,14 @@ public class MazeAI {
         MST.addNodes();
         MST.findMST();
 
-
+        int mutliCost = 0;
         for (Edge it_edge : MST.path) {
             System.out.println(it_edge.weight);
             System.out.println("startnode" + it_edge.beginNode.value);
             System.out.println("endNode" + it_edge.endNode.value);
+            mutliCost += it_edge.weight;
         }
+
         MazeMap.printMap();
         for (Edge it_edge : MST.path) {
             System.out.println("startNode x : " + it_edge.beginNode.x + " startNode y : " + it_edge.beginNode.y);
@@ -47,6 +49,7 @@ public class MazeAI {
 
         Path.ordering();
         MazeMap.printMap();
+        System.out.println("path cost: " + mutliCost);
 
 
 

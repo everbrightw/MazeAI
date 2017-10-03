@@ -19,7 +19,7 @@ class MST {
                         AStar.getDistance(startNode, endNode)));
             }
         }
-        //Collections.reverse(edges);
+        // Collections.reverse(edges);
         sortEdges();
     }
 
