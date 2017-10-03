@@ -12,7 +12,7 @@ public class DFS {
     public static Node doDFS(Node startNode) {
 
         Node curr;
-        Stack<Node> s = new Stack<>();
+        Stack<Node> s = new Stack<>(); // use stack to achieve first entering and first popping
         s.push(startNode);
 
         big:
@@ -21,21 +21,22 @@ public class DFS {
             visited.add(curr);
             curr.isVisited = true;
             s.pop();
-          
+
             if (curr.value == '.') {
                 end = curr;
                 break big;
             }
             for (int i = 0; i < curr.neighbor.size(); i++) {
                 if (!curr.neighbor.get(i).isBlocked && !visited.contains(curr.neighbor.get(i))) {
-                    trace.put(curr.neighbor.get(i), curr);
+                    trace.put(curr.neighbor.get(i), curr); //build connection between parent and child
                     s.push(curr.neighbor.get(i));
                 }
             }
         }
 
 
-        while (end != startNode) {
+        while (end != startNode) { //back trace to link the parent and its child
+                                  //until it finds the start from end
             Node parent = trace.get(end);
             if (parent != startNode) {
 

@@ -3,8 +3,9 @@ import java.util.PriorityQueue;
 
 class Greedy {
     public static Comparator<Node> nodeComp = new Comparator<Node>() {
-        
+
         @Override
+        //override the compare function to compare Node by manhattanDistance
         public int compare(Node first, Node second) {
             return first.manhattanDistance(MazeMap.destination) - second.manhattanDistance(MazeMap.destination);
         }
@@ -14,6 +15,7 @@ class Greedy {
 
     public static Node greedySearch(Node startNode) {
         PriorityQueue<Node> pQueue = new PriorityQueue<Node>(99999, nodeComp);
+        //set the initialcapacity to as large as possible
 
         pQueue.add(startNode);
         while (!pQueue.isEmpty()) {
@@ -30,6 +32,7 @@ class Greedy {
                             pQueue.add(it_node);
                         }
                         MazeMap.trace.put(it_node, curr_node);
+                        //build the connection between parent and child
                     }
                 }
             }

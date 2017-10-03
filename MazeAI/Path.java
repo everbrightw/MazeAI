@@ -22,6 +22,8 @@ class Path {
         }        // MazeMap.startNode.value = 'P';
     }
 
+
+    //order the edges from startNode, until all of the edges have already been used
     public static void ordering(){
       Node firststep = null;
       List<Node> visited = new ArrayList<Node>();
@@ -49,6 +51,8 @@ class Path {
          //System.out.println("firststep value :" + firststep.value);
 
         for(int i = 0; i < MST.path.size(); i++){
+          //since we don't care about the order of beginNode and endNode when building MST,
+          //we should consider that every Node has equal possibility that being beginNode and endNode
             if(MST.path.get(i).beginNode.equals(firststep) || MST.path.get(i).endNode.equals(firststep)){
               //System.out.println("current path endNode " + MST.path.get(i).endNode.value);
               //System.out.println("contains? " + visited.contains(MST.path.get(i).endNode));
