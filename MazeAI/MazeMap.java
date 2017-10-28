@@ -20,7 +20,6 @@ class MazeMap {
                 System.out.println();
             }
         }
-     
     }
 
     public static Node getNode(int x, int y) {

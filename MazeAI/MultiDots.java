@@ -8,3 +8,5 @@ class MultiDots {
     public static List<Integer> costDistance = new ArrayList<Integer>();
 
 }
+
+

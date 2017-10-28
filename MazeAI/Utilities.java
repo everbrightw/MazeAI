@@ -38,8 +38,8 @@ class Utilities{
             // System.out.println(line);
             MazeMap.width = line.length();
             for (column = 0; column < line.length(); column++ ) {
-                //initialize the board;
 
+                //initialize the board;
                 maze_map.add(new Node(column, row, line.charAt(column)));//add every single node of char to the MazeMap
                 Node curr_node = MazeMap.getNode(column, row);
 
@@ -52,14 +52,15 @@ class Utilities{
                     MultiDots.destinations.add(curr_node);
                     MST.vertices.add(curr_node);
                 }
-
+                
                 if(column == 0){MazeMap.getNode(column, row).left_child = null;} //left most
+
                 else{
                     MazeMap.getNode(column, row).left_child =
                     MazeMap.getNode(column-1, row);
                     MazeMap.getNode(column-1, row).right_child = MazeMap.getNode(column, row);
-
                 }
+
                 //y cases
                 if(row == 0){MazeMap.getNode(column, row).up_child = null;} // up most
                 else{
